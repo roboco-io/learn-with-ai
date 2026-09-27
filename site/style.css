@@ -36,3 +36,65 @@
 .daily-sprint h3{font-size:2.6cqw;margin-bottom:1.4cqw}
 .daily-sprint p{font-size:1.75cqw;line-height:1.7}
 .slide .loop-return{color:var(--blue);font-size:1.8cqw;text-align:center;margin:1.8cqw 0 3cqw}
+
+/* Readability pass: center content in the free space and size text for a lecture hall. */
+.slide-content{display:flex;flex-direction:column;justify-content:center}
+.chart-slide .slide-content{justify-content:flex-start}
+.cover .slide-content,.statement .slide-content{flex:none}
+@media(min-width:701px){
+.slide p{font-size:2.2cqw}
+.slide .lead{font-size:2.9cqw}
+.slide h3{font-size:2.6cqw}
+.slide .fine{font-size:1.4cqw}
+.slide-sources{font-size:1.2cqw}
+.steps{gap:2cqw}
+.steps li{grid-template-columns:4.5cqw 30cqw 1fr}
+.steps li:before{font-size:2.3cqw}
+.steps strong{font-size:2.6cqw}
+.steps span{font-size:2.2cqw}
+.prompt{font-size:2.2cqw}
+table{font-size:2.1cqw}th{font-size:1.7cqw}
+.matrix b{font-size:3cqw}
+.cycle{justify-content:flex-start;flex-wrap:wrap;gap:1.2cqw}
+.cycle span{font-size:2.2cqw;padding:1.1cqw 2cqw;background:var(--pale);border-radius:.7cqw}
+.cycle b{font-size:2.4cqw}
+.section .cycle span,.section .matrix>div{background:#ffffff1f;border-color:#ffffff55}
+.section .matrix>div{padding:1.5cqw 2cqw;border-top:0;border-radius:.7cqw}
+.section .matrix p{color:#e1e8ff}
+.section .matrix{margin-top:2cqw;gap:1.6cqw}
+.comparison strong{display:block}
+.intent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;margin-bottom:1.5cqw}
+.intent-grid>div{background:#ffffffb3;border-top:3px solid var(--blue);padding:1.8cqw 2cqw}
+.intent-grid h3{color:var(--blue)}
+.intent-grid p{font-size:2cqw;line-height:1.7}
+.slide .edge{margin-top:2.4cqw;padding-top:1.4cqw;border-top:1px solid var(--line);font-size:2.2cqw}
+.edge strong{color:var(--blue);margin-right:1.4cqw}
+.slide .caveat{font-size:1.8cqw;color:#865012;margin-top:1cqw}
+.chart{height:30cqw}
+.chart-slide .fine,.chart-slide .chart-detail{font-size:1.3cqw}
+.xy-flow{gap:2.2cqw}
+.xy-flow li{height:auto;min-height:3cqw}
+.xy-flow li:not(:last-child)::after{bottom:-2.1cqw;font-size:1.6cqw}
+}
+.contact .qr img{width:13cqw;height:13cqw;display:block;border-radius:.6cqw}
+@media(max-width:700px){.slide-content{justify-content:flex-start}.intent-grid{grid-template-columns:1fr;gap:4cqw}.intent-grid p,.slide .edge,.slide .caveat{font-size:4.1cqw}.cycle span{font-size:4.3cqw;padding:2cqw 3cqw}.steps li{grid-template-columns:7cqw 1fr}.contact .qr img{width:40cqw;height:40cqw}}
+.columns+.prompt{margin-top:2.5cqw}
+@media(max-width:700px){.edge strong{margin-right:2cqw}.intent-grid>div{background:#ffffffb3;border-top:3px solid var(--blue);padding:4cqw}}
+.streak-stats{display:flex;gap:6cqw;margin-bottom:2cqw}
+.streak-stats b{display:block;font-size:4.2cqw;letter-spacing:-.04em;color:var(--blue)}
+.streak-stats span{font-size:1.7cqw;color:var(--muted)}
+.contrib{display:grid;grid-template-rows:repeat(7,1.25cqw);grid-auto-flow:column;grid-auto-columns:1.25cqw;gap:.32cqw}
+.contrib i{border-radius:.22cqw;background:#e3e8f2}
+.contrib .l1{background:#9be9a8}.contrib .l2{background:#40c463}.contrib .l3{background:#30a14e}.contrib .l4{background:#216e39}
+.gh-profile{display:grid;grid-template-columns:24cqw 1fr;gap:4cqw;align-items:start;margin-top:.5cqw}
+.gh-card{border:1px solid var(--line);border-radius:.8cqw;padding:2cqw;background:#fff}
+.gh-card img{width:9cqw;height:9cqw;display:block;margin-bottom:1.2cqw}
+.gh-card h3{margin:0}
+.slide .gh-card p{font-size:1.6cqw;line-height:1.5;margin-top:.4cqw;color:var(--muted)}
+.slide .gh-card .gh-stats{color:var(--ink)}
+.gh-pins{list-style:none;margin:0;padding:0;display:grid;gap:1.3cqw}
+.gh-pins li{display:grid;grid-template-columns:1fr auto;column-gap:2cqw;border-bottom:1px solid var(--line);padding-bottom:1.1cqw}
+.gh-pins a{font-size:1.9cqw;font-weight:700;color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
+.gh-pins b{font-size:1.7cqw;color:#865012;font-weight:700}
+.gh-pins span{grid-column:1/-1;font-size:1.7cqw;color:var(--muted);margin-top:.3cqw}
+@media(min-width:701px){.slide .lead+table{margin-top:1cqw}}
