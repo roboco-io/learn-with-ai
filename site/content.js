@@ -46,10 +46,10 @@ export const slides = [
   },
   {
     "title": "시작하면서: 맥북을 장만하세요",
-    "body": "<div class=\"columns\"><div><h3>강연자의 권장 구성</h3><p>Apple Silicon M1 이후<br>메모리 16GB · SSD 512GB 이상</p></div><div><h3>구입보다 중요한 것</h3><p>Air / Pro 모두 가능<br>지금 가진 PC로도 바로 시작</p></div></div>",
+    "body": "<div class=\"columns\"><div><h3>강연자의 권장 구성</h3><p>Apple Silicon M1 이후<br>메모리 16GB · SSD 256GB 이상</p></div><div><h3>구입보다 중요한 것</h3><p>Air / Pro 모두 가능<br>지금 가진 PC로도 바로 시작</p></div></div><div class=\"prompt\" style=\"margin-top:3cqw\"><strong>Windows 선택에 대한 강연자 의견</strong><br>Windows는 개발자 세계에서 마이너한 OS입니다.<br>스스로 고수라고 생각하는 사람만 선택하세요.</div>",
     "chapter": "현실과 출발점",
     "kind": "",
-    "notes": "macOS는 강연자가 개발에 선호하는 환경입니다. 모든 개발 도구가 Mac 우선이라는 일반화는 피합니다. 이 사양은 클라우드 AI API와 일반적인 학습 프로젝트를 위한 권장안이며 대형 모델을 로컬에서 돌리는 기준은 아닙니다. 256GB도 가능하지만 정리가 더 자주 필요합니다. 새 장비가 학습의 전제 조건은 아닙니다.",
+    "notes": "macOS는 강연자가 개발에 선호하는 환경입니다. 권장 구성은 Apple Silicon M1 이후, 메모리 16GB, SSD 256GB 이상입니다. 256GB를 선택하면 저장 공간을 자주 정리할 수 있습니다. 이 사양은 클라우드 AI API와 일반적인 학습 프로젝트를 위한 권장안이며 대형 모델을 로컬에서 돌리는 기준은 아닙니다. Windows 안내는 강연자의 경험과 관점에 따른 선택 기준입니다. 개발 도구의 호환성이나 환경 설정 문제를 스스로 해결할 자신이 있는 사람에게 권한다는 취지로 설명합니다. 전체 개발자의 OS 점유율에 관한 통계적 주장으로 확대하지 않습니다. 새 장비가 학습의 전제 조건은 아니므로 현재 가진 PC로도 시작할 수 있습니다.",
     "refs": [],
     "minutes": 1
   },
