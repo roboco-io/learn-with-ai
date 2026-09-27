@@ -21,3 +21,11 @@
 .speaker-bio{display:flex;flex-direction:column;gap:1.7cqw}
 .speaker-bio h3{font-size:2.35cqw;margin:0 0 .3cqw}
 .speaker-bio p{font-size:1.55cqw;line-height:1.5;margin:0;color:var(--muted)}
+
+.xy-example{display:grid;grid-template-columns:1fr 1fr;gap:5cqw}
+.xy-example>div{border-top:3px solid var(--blue);padding-top:1.5cqw}
+.xy-example h3{font-size:2.15cqw;margin-bottom:1.4cqw}
+.xy-flow{list-style:none;margin:0;padding:0;display:grid;gap:1cqw}
+.xy-flow li{position:relative;display:flex;align-items:center;height:5cqw;font-size:1.85cqw;line-height:1.35;word-break:keep-all}
+.xy-flow li:not(:last-child)::after{content:'↓';position:absolute;left:0;bottom:-1.05cqw;font-size:1.4cqw;color:var(--blue)}
+.xy-example .xy-time{font-size:2.6cqw;font-weight:800;color:var(--blue);margin:1.2cqw 0 0}
