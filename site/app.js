@@ -145,9 +145,10 @@ function drawChart(animate=false){
  svg.append(svgNode('rect',{x:L,y:4,width:W-L-R,height:lineY-4,'data-motion':'zone-fill',fill:'#fff5e8'}));
  svg.append(svgNode('rect',{x:L,y:4,width:W-L-R,height:lineY-4,'data-motion':'zone-hatch',fill:'url(#unreliable-hatch)'}));
  const notice=svgNode('text',{x:L+14,y:21,style:'fill:#865012;font-size:13px'});
- notice.append(svgNode('tspan',{x:L+14},'Measurements above 16 hrs are unreliable'),svgNode('tspan',{x:L+14,dy:16},'with our current task suite'));
+ notice.append(svgNode('tspan',{x:L+14},'16시간 초과 구간 · 현재 과제 구성으로는'),svgNode('tspan',{x:L+14,dy:16},'측정 신뢰도가 낮음 (METR)'));
  svg.append(notice);
- const ticks=scale==='log'?[1/60,1,60,480,960]:[0,240,480,720,960];
+ // 8h sits too close to 16h on the log axis for both labels to stay legible.
+ const ticks=scale==='log'?[1/60,1,60,960]:[0,240,480,720,960];
  ticks.forEach(v=>{const yy=y(v);svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,'data-motion':`grid-${v}`,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,'data-motion':`tick-${v}`,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
  for(let yr=2019;yr<=2026;yr++){const xx=x(`${yr}-01-01`);svg.append(svgNode('text',{x:xx,y:H-9,'text-anchor':'middle'},yr));}
  svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,'data-motion':'threshold',stroke:'#b36817','stroke-dasharray':'5 5'}));
@@ -167,3 +168,12 @@ function drawChart(animate=false){
 }
 document.querySelectorAll('[data-scale]').forEach(b=>b.onclick=()=>{if(scale===b.dataset.scale)return;scale=b.dataset.scale;document.querySelectorAll('[data-scale]').forEach(el=>el.setAttribute('aria-pressed',el===b));if(data)drawChart(true);});
 try {const response=await fetch('./data/metr.json');if(!response.ok)throw new Error('data');data=await response.json();drawChart();}catch{$('#metr-chart').innerHTML='<p>그래프 데이터를 불러오지 못했습니다. <a href="https://metr.org/time-horizons/">METR 공식 그래프 보기</a></p>';}
+// Contribution graph: pad the first week so each column runs Sunday to Saturday.
+try{
+ const box=$('#contrib');
+ const response=await fetch('./data/github-contributions.json');if(!response.ok)throw new Error('data');
+ const {days}=await response.json();
+ const level=n=>n===0?0:n<4?1:n<10?2:n<20?3:4;
+ const pad=new Date(`${days[0][0]}T00:00:00Z`).getUTCDay();
+ box.innerHTML='<i></i>'.repeat(pad)+days.map(([d,n])=>`<i class="l${level(n)}" title="${d} · ${n}회"></i>`).join('');
+}catch{$('#contrib').innerHTML='<p>기여 그래프를 불러오지 못했습니다. <a href="https://github.com/serithemage">GitHub 프로필 보기</a></p>';}
