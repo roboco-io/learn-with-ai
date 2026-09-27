@@ -29,3 +29,10 @@
 .xy-flow li{position:relative;display:flex;align-items:center;height:5cqw;font-size:1.85cqw;line-height:1.35;word-break:keep-all}
 .xy-flow li:not(:last-child)::after{content:'↓';position:absolute;left:0;bottom:-1.05cqw;font-size:1.4cqw;color:var(--blue)}
 .xy-example .xy-time{font-size:2.6cqw;font-weight:800;color:var(--blue);margin:1.2cqw 0 0}
+
+.daily-sprint{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5cqw;margin:4cqw 0 2.3cqw}
+.daily-sprint>div{position:relative;border-top:3px solid var(--blue);padding-top:1.8cqw}
+.daily-sprint>div:not(:last-child)::after{content:'→';position:absolute;right:-2.9cqw;top:1.7cqw;color:var(--blue);font-size:2.4cqw}
+.daily-sprint h3{font-size:2.6cqw;margin-bottom:1.4cqw}
+.daily-sprint p{font-size:1.75cqw;line-height:1.7}
+.slide .loop-return{color:var(--blue);font-size:1.8cqw;text-align:center;margin:1.8cqw 0 3cqw}
