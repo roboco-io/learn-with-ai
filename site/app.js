@@ -31,18 +31,58 @@ function showOutline() {$('#outline').showModal(); $('#outline-list [aria-curren
 $('#overview').onclick=showOutline;
 $('#outline-close').onclick=()=>$('#outline').close();
 $('#outline-list').onclick=e=>{const b=e.target.closest('[data-slide]');if(b){go(Number(b.dataset.slide));$('#outline').close();}};
-async function fullscreen(){try{if(document.fullscreenElement) await document.exitFullscreen();else if(document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();else $('#status').textContent='이 브라우저는 전체화면 API를 지원하지 않습니다.';}catch{$('#status').textContent='전체화면을 시작할 수 없습니다. 브라우저의 전체화면 메뉴를 사용해 주세요.';}}
+let fullscreenBusy=false;
+const nativeFullscreen=()=>document.fullscreenElement||document.webkitFullscreenElement;
+function setPresentation(active){
+ document.body.classList.toggle('presentation',active);
+ $('#fullscreen').setAttribute('aria-pressed',String(active));
+ $('#presentation-exit').hidden=!active;
+ if(active)$('#presentation-exit').focus({preventScroll:true});
+ else{ $('#status').classList.remove('visible-status');$('#status').textContent='';$('#fullscreen').focus({preventScroll:true}); }
+}
+async function leavePresentation(){
+ if(fullscreenBusy)return;
+ fullscreenBusy=true;
+ try{
+  if(nativeFullscreen()){
+   const exit=document.exitFullscreen||document.webkitExitFullscreen;
+   if(exit)await exit.call(document);
+  }
+  setPresentation(false);
+ }catch{
+  $('#status').textContent='Esc 키로 브라우저 전체화면을 종료해 주세요.';
+  $('#status').classList.add('visible-status');
+ }finally{fullscreenBusy=false;}
+}
+async function fullscreen(){
+ if(fullscreenBusy)return;
+ if(document.body.classList.contains('presentation')||nativeFullscreen()){await leavePresentation();return;}
+ fullscreenBusy=true;
+ setPresentation(true);
+ try{
+  const request=document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen;
+  if(!request)throw new Error('Fullscreen unavailable');
+  await request.call(document.documentElement);
+ }catch{
+  $('#status').textContent='브라우저 전체화면을 사용할 수 없어 창 안에서 확대했습니다. 종료: Esc';
+  $('#status').classList.add('visible-status');
+ }finally{fullscreenBusy=false;}
+}
+for(const event of ['fullscreenchange','webkitfullscreenchange'])document.addEventListener(event,()=>setPresentation(!!nativeFullscreen()));
 $('#fullscreen').onclick=fullscreen;
+$('#presentation-exit').onclick=leavePresentation;
 $('#print').onclick=()=>window.print();
 document.addEventListener('keydown',e=>{
  if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,textarea,select,[contenteditable]')||$('#outline').open) return;
  if(e.target.closest('button,a,[role="button"]') && ['Enter',' '].includes(e.key)) return;
  const k=e.key.toLowerCase();
+ if(e.code==='KeyF'||k==='f'){e.preventDefault();if(!e.repeat)fullscreen();return;}
+ if(k==='escape'&&document.body.classList.contains('presentation')){e.preventDefault();leavePresentation();return;}
  if(['arrowright','pagedown',' '].includes(k)){e.preventDefault();go(current+1);}
  else if(['arrowleft','pageup'].includes(k)){e.preventDefault();go(current-1);}
  else if(k==='home'){e.preventDefault();go(0);}
  else if(k==='end'){e.preventDefault();go(slides.length-1);}
- else if(k==='o')showOutline();else if(k==='n')toggleNotes();else if(k==='f')fullscreen();else if(k==='escape')toggleNotes(false);
+ else if(k==='o')showOutline();else if(k==='n')toggleNotes();else if(k==='escape')toggleNotes(false);
 });
 let touch=null;
 $('#deck').addEventListener('touchstart',e=>{if(e.target.closest('a,button,svg'))return;touch={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY};},{passive:true});

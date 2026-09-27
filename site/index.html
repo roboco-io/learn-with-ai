@@ -16,13 +16,14 @@
 </head>
 <body>
   <a class="skip" href="#deck">슬라이드로 이동</a>
-  <header class="toolbar"><a href="#1" class="brand" aria-label="첫 슬라이드">ROBOCO <span>AI 시대의 학습법</span></a><nav aria-label="발표 도구"><button id="overview" aria-haspopup="dialog">목차 <kbd>O</kbd></button><button id="notes-toggle" aria-expanded="false" aria-controls="notes">노트 <kbd>N</kbd></button><button id="fullscreen">전체화면 <kbd>F</kbd></button><button id="print">인쇄</button></nav></header>
+  <header class="toolbar"><a href="#1" class="brand" aria-label="첫 슬라이드">ROBOCO <span>AI 시대의 학습법</span></a><nav aria-label="발표 도구"><button id="overview" aria-haspopup="dialog">목차 <kbd>O</kbd></button><button id="notes-toggle" aria-expanded="false" aria-controls="notes">노트 <kbd>N</kbd></button><button id="fullscreen" aria-pressed="false">전체화면 <kbd>F</kbd></button><button id="print">인쇄</button></nav></header>
   <main id="deck" tabindex="-1" aria-label="발표 슬라이드"></main>
   <noscript><p>이 발표자료는 JavaScript가 필요합니다. 브라우저 설정에서 활성화해 주세요.</p></noscript>
   <footer class="navigation"><span id="chapter"></span><div><button id="prev" aria-label="이전 슬라이드">←</button><span id="counter" aria-live="polite"></span><button id="next" aria-label="다음 슬라이드">→</button></div><span class="keyboard-hint">← → 이동 · O 목차 · N 노트</span></footer>
   <div class="progress" role="progressbar" aria-label="발표 진행" aria-valuemin="1"><div id="progress-fill"></div></div>
   <aside id="notes" hidden aria-label="발표자 노트"><button id="notes-close" aria-label="노트 닫기">닫기 ×</button><h2>발표자 노트</h2><p id="timing"></p><p id="notes-text"></p></aside>
   <dialog id="outline"><header><h2>발표 목차</h2><button id="outline-close" autofocus>닫기 ×</button></header><p>60분 강연 · 본문 37장 + 참고 자료 2장</p><ol id="outline-list"></ol></dialog>
+  <button id="presentation-exit" hidden aria-label="발표 화면 종료">발표 종료 <kbd>Esc</kbd></button>
   <p id="status" class="sr-only" role="status"></p>
 </body>
 </html>
