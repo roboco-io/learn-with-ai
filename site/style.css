@@ -98,3 +98,4 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .xyd-fast{fill:var(--blue)}.xy-diagram .xyd-fast-text{fill:#fff;font-weight:800;font-size:23px}
 .xyd-edge{fill:none;stroke-width:2.5}.xyd-edge.detour{stroke:#b36817;stroke-dasharray:6 5}.xyd-edge.direct{stroke:var(--blue)}
 .xyd-head.detour{fill:#b36817}.xyd-head.direct{fill:var(--blue)}
+.slide .topdown-q{font-size:1.9cqw;color:#e1e8ff;margin-top:.5cqw}
