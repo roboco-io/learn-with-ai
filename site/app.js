@@ -48,34 +48,82 @@ let touch=null;
 $('#deck').addEventListener('touchstart',e=>{if(e.target.closest('a,button,svg'))return;touch={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY};},{passive:true});
 $('#deck').addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2)go(current+(dx<0?1:-1));touch=null;},{passive:true});
 go(fromHash(),false);
-let data, scale='log';
+let data, scale='log', chartFrame=0, finishChartAnimation=null;
 const ns='http://www.w3.org/2000/svg';
 function svgNode(name,attrs,text){const el=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(text!==undefined)el.textContent=text;return el;}
 function duration(m){return m<1?`${(m*60).toFixed(1)}초`:m<60?`${m.toFixed(1)}분`:`${(m/60).toFixed(1)}시간`;}
-function drawChart(){
- const W=1000,H=320,L=76,R=34,T=13,B=38, max=4320,min=.006;
+// Keep the in-flight positions so a quick reversal never jumps to an old scale.
+function transitionChart(svg, animate) {
+ cancelAnimationFrame(chartFrame);
+ const previous=$('#metr-chart svg');
+ const motion=animate && previous && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const tweens=[];
+ if(motion){
+  const oldNodes=new Map([...previous.querySelectorAll('[data-motion]')].map(el=>[el.dataset.motion,el]));
+  for(const el of svg.querySelectorAll('[data-motion]')){
+   const old=oldNodes.get(el.dataset.motion);
+   if(old){
+    for(const attr of ['y','y1','y2','cy','height','opacity']){
+     if(!el.hasAttribute(attr) && attr!=='opacity')continue;
+     const to=Number(el.getAttribute(attr)??1),from=Number(old.getAttribute(attr)??1);
+     if(from!==to){el.setAttribute(attr,from);tweens.push({el,attr,from,to});}
+    }
+    oldNodes.delete(el.dataset.motion);
+   }else{el.setAttribute('opacity',0);tweens.push({el,attr:'opacity',from:0,to:1});}
+  }
+  for(const old of oldNodes.values()){
+   const el=old.cloneNode(true);el.setAttribute('aria-hidden','true');el.style.pointerEvents='none';
+   svg.append(el);tweens.push({el,attr:'opacity',from:Number(el.getAttribute('opacity')??1),to:0,remove:true});
+  }
+ }
+ $('#metr-chart').replaceChildren(svg);
+ const finish=()=>{cancelAnimationFrame(chartFrame);for(const t of tweens){if(t.remove)t.el.remove();else t.el.setAttribute(t.attr,t.to);}svg.removeAttribute('data-animating');finishChartAnimation=null;};
+ finishChartAnimation=finish;
+ if(!tweens.length){finish();return;}
+ svg.dataset.animating='true';
+ const start=performance.now();
+ function step(now){
+  const t=Math.min(1,(now-start)/550),ease=t*t*(3-2*t);
+  for(const v of tweens)v.el.setAttribute(v.attr,v.from+(v.to-v.from)*ease);
+  if(t<1)chartFrame=requestAnimationFrame(step);else finish();
+ }
+ chartFrame=requestAnimationFrame(step);
+}
+window.addEventListener('beforeprint',()=>finishChartAnimation?.());
+function drawChart(animate=false){
+ const W=1000,H=320,L=76,R=34,T=46,B=38, max=1200,min=.006;
  const start=Date.UTC(2019,0,1),end=Date.UTC(2026,8,1);
  const x=d=>L+(Date.parse(d)-start)/(end-start)*(W-L-R);
  const y=v=>H-B-(scale==='log'?(Math.log(Math.max(v,min))-Math.log(min))/(Math.log(max)-Math.log(min)):v/max)*(H-T-B);
  const svg=svgNode('svg',{viewBox:`0 0 ${W} ${H}`,role:'group','aria-label':`METR 50% 성공 과제 길이, ${scale==='log'?'로그':'선형'} 축. 점에 포커스하거나 클릭해 상세 확인.`});
  svg.append(svgNode('title',{},'METR TH 1.1 · 50% 성공 시간 지평'));
- const ticks=scale==='log'?[1/60,1,60,480,4320]:[0,720,1440,2160,2880,3600,4320];
- ticks.forEach(v=>{const yy=y(v);svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
- for(let yr=2019;yr<=2026;yr++){const xx=x(`${yr}-01-01`);svg.append(svgNode('text',{x:xx,y:H-9,'text-anchor':'middle'},yr));}
  const lineY=y(960);
- svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,stroke:'#b36817','stroke-dasharray':'5 5'}));
- svg.append(svgNode('text',{x:L+5,y:lineY-6,style:'fill:#9b5a10;font-size:12px'},'16시간 · 이 이상 추정은 신뢰도가 낮음'));
+ const defs=svgNode('defs',{});
+ const hatch=svgNode('pattern',{id:'unreliable-hatch',width:8,height:8,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'});
+ hatch.append(svgNode('line',{x1:0,x2:0,y1:0,y2:8,stroke:'#b36817','stroke-opacity':.16,'stroke-width':2}));
+ defs.append(hatch);svg.append(defs);
+ svg.append(svgNode('rect',{x:L,y:4,width:W-L-R,height:lineY-4,'data-motion':'zone-fill',fill:'#fff5e8'}));
+ svg.append(svgNode('rect',{x:L,y:4,width:W-L-R,height:lineY-4,'data-motion':'zone-hatch',fill:'url(#unreliable-hatch)'}));
+ const notice=svgNode('text',{x:L+14,y:21,style:'fill:#865012;font-size:13px'});
+ notice.append(svgNode('tspan',{x:L+14},'Measurements above 16 hrs are unreliable'),svgNode('tspan',{x:L+14,dy:16},'with our current task suite'));
+ svg.append(notice);
+ const ticks=scale==='log'?[1/60,1,60,480,960]:[0,240,480,720,960];
+ ticks.forEach(v=>{const yy=y(v);svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,'data-motion':`grid-${v}`,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,'data-motion':`tick-${v}`,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
+ for(let yr=2019;yr<=2026;yr++){const xx=x(`${yr}-01-01`);svg.append(svgNode('text',{x:xx,y:H-9,'text-anchor':'middle'},yr));}
+ svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,'data-motion':'threshold',stroke:'#b36817','stroke-dasharray':'5 5'}));
  data.models.forEach(m=>{
   const xx=x(m.date),yy=y(m.estimate);
-  svg.append(svgNode('line',{x1:xx,x2:xx,y1:y(m.ci_low),y2:y(m.ci_high),class:'ci'}));
+  svg.append(svgNode('line',{x1:xx,x2:xx,y1:y(Math.max(min,m.ci_low)),y2:y(Math.min(max,m.ci_high)),class:'ci','data-motion':`ci-${m.id}`}));
+  // An upward cap indicates that the original interval continues beyond the plot.
+  if(m.ci_high>max) svg.append(svgNode('path',{d:`M ${xx-3} ${T+4} L ${xx} ${T} L ${xx+3} ${T+4}`,fill:'none',stroke:'#254fd5','stroke-opacity':.5}));
   const label=`${m.name} · ${m.date} · ${duration(m.estimate)} · 95% 신뢰구간 ${duration(m.ci_low)}–${duration(m.ci_high)}`;
-  const p=svgNode('circle',{cx:xx,cy:yy,r:5.5,class:`point${m.estimate>960?' unreliable':''}`,tabindex:0,role:'button','aria-label':label});
+  const p=svgNode('circle',{cx:xx,cy:yy,'data-motion':`point-${m.id}`,r:5.5,class:`point${m.estimate>960?' unreliable':''}`,tabindex:0,role:'button','aria-label':label});
   p.append(svgNode('title',{},label));
   const show=()=>{$('#chart-detail').textContent=label;};
   p.addEventListener('focus',show);p.addEventListener('mouseenter',show);p.addEventListener('click',show);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
   svg.append(p);
  });
- $('#metr-chart').replaceChildren(svg);
+ transitionChart(svg,animate);
 }
-document.querySelectorAll('[data-scale]').forEach(b=>b.onclick=()=>{scale=b.dataset.scale;document.querySelectorAll('[data-scale]').forEach(el=>el.setAttribute('aria-pressed',el===b));if(data)drawChart();});
+document.querySelectorAll('[data-scale]').forEach(b=>b.onclick=()=>{if(scale===b.dataset.scale)return;scale=b.dataset.scale;document.querySelectorAll('[data-scale]').forEach(el=>el.setAttribute('aria-pressed',el===b));if(data)drawChart(true);});
 try {const response=await fetch('./data/metr.json');if(!response.ok)throw new Error('data');data=await response.json();drawChart();}catch{$('#metr-chart').innerHTML='<p>그래프 데이터를 불러오지 못했습니다. <a href="https://metr.org/time-horizons/">METR 공식 그래프 보기</a></p>';}
