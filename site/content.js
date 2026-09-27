@@ -1,7 +1,7 @@
 export const slides = [
   {
     "title": "AI 시대의<br>학습법",
-    "body": "<p class=\"lead\">작게 만들고, 세상에 내놓고, 나의 기회로 연결하기</p><p class=\"signature\">serithemage / ROBOCO</p>",
+    "body": "<p class=\"lead\">작게 만들고, 세상에 내놓고, 나의 기회로 연결하기</p><p class=\"signature\">정도현 (serithemage) / ROBOCO</p>",
     "chapter": "시작",
     "kind": "cover",
     "notes": "오늘은 더 많은 강의를 듣는 법이 아니라, 배움을 실제 기회로 바꾸는 법을 이야기합니다. 취업을 준비하는 사람도, 내 서비스를 만들고 싶은 사람도 같은 출발선에서 시작할 수 있습니다.",
@@ -27,12 +27,21 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "발표자 · serithemage",
-    "body": "<div class=\"columns\"><div><h3>오늘 공유할 경험</h3><p>회사가 나를 뽑을 이유를 설계하는<br>Offer Backward 학습법</p></div><div><h3>함께 이야기할 곳</h3><p>바이브 코딩 커뮤니티 운영<br>카카오톡 ID <strong>serithemage</strong></p></div></div>",
+    "title": "정도현 · serithemage",
+    "body": "<p>1995년부터 소프트웨어 개발 · AI·클라우드 개발과 교육</p><div class=\"speaker-profile\"><img src=\"./assets/serithemage.png\" width=\"460\" height=\"460\" alt=\"serithemage GitHub 프로필 아바타\"><div class=\"speaker-bio\"><div><h3>Roboco.io 창업자 · AI 컨설턴트</h3><p>기업의 AI 도입 컨설팅과 실무 교육</p></div><div><h3>전 AWS 개발자 · 테크니컬 트레이너</h3><p>Senior Software Development Engineer · 2022–2024<br>Technical Trainer / Senior Technical Trainer · 2016–2022</p></div><div><h3>『핸즈온 바이브 코딩』 저자</h3><p>한빛미디어 · 2025</p></div></div></div>",
     "chapter": "시작",
     "kind": "",
-    "notes": "본인의 실제 경험을 바탕으로 간단히 소개합니다. Offer Backward는 강연자가 제안한 취업 학습법이며 Amazon의 공식 채용 방법이 아닙니다. 커뮤니티와 연락처는 마지막 슬라이드에도 있습니다.",
-    "refs": [],
+    "notes": "GitHub 프로필을 바탕으로 1분 이내에 소개합니다. “1995년부터 소프트웨어를 개발해 온 정도현입니다. AWS에서는 기술 교육을 담당했고 이후 Senior Software Development Engineer로 AWS Skill Builder 개발에 참여했습니다. 지금은 로보코를 운영하며 기업의 AI 도입과 개발, 교육을 돕고 있습니다. 『핸즈온 바이브 코딩』을 썼고 오픈소스 도구도 만들고 있습니다. 오늘은 직접 만들고 가르치며 쌓은 경험을 바탕으로, AI 시대에 어떻게 배우고 기회를 만들지 이야기하겠습니다.” 경력 기준: AWS Technical Trainer / Senior Technical Trainer 2016.07–2022.07, Senior Software Development Engineer 2022.07–2024.11, Roboco.io Founder & Principal AI Consultant 2024.12부터. GitHub 프로필 README 커밋 bf460a32c5d214260bce35047ea56fdc1a90c150 기준. 아바타 출처: https://avatars.githubusercontent.com/u/3435720?v=4",
+    "refs": [
+      [
+        "GitHub · serithemage",
+        "https://github.com/serithemage"
+      ],
+      [
+        "한빛미디어 · 핸즈온 바이브 코딩",
+        "https://www.hanbit.co.kr/books/B3757318997"
+      ]
+    ],
     "minutes": 1
   },
   {
