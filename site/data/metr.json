@@ -1,0 +1,218 @@
+{
+  "source": "https://metr.org/assets/benchmark_results_1_1.yaml",
+  "retrieved": "2026-09-27",
+  "updated": "2026-05-08",
+  "benchmark": "METR-Horizon-v1.1",
+  "unit": "human_minutes",
+  "metric": "p50_horizon_length",
+  "models": [
+    {
+      "id": "gpt2",
+      "name": "GPT-2",
+      "date": "2019-02-14",
+      "ci_high": 0.141825,
+      "ci_low": 0.009994,
+      "estimate": 0.053778
+    },
+    {
+      "id": "davinci_002",
+      "name": "GPT-3 (davinci-002)",
+      "date": "2020-05-28",
+      "ci_high": 0.221209,
+      "ci_low": 0.093319,
+      "estimate": 0.144057
+    },
+    {
+      "id": "gpt_3_5_turbo_instruct",
+      "name": "GPT-3.5 Turbo Instruct",
+      "date": "2022-03-15",
+      "ci_high": 1.115905,
+      "ci_low": 0.255148,
+      "estimate": 0.599247
+    },
+    {
+      "id": "gpt_4",
+      "name": "GPT-4",
+      "date": "2023-03-14",
+      "ci_high": 7.995283,
+      "ci_low": 1.93292,
+      "estimate": 3.987428
+    },
+    {
+      "id": "gpt_4_1106_inspect",
+      "name": "GPT-4 (Nov 2023)",
+      "date": "2023-11-06",
+      "ci_high": 8.443226,
+      "ci_low": 1.866859,
+      "estimate": 4.044959
+    },
+    {
+      "id": "claude_3_opus_inspect",
+      "name": "Claude 3 Opus",
+      "date": "2024-03-04",
+      "ci_high": 8.76484,
+      "ci_low": 1.706313,
+      "estimate": 3.952262
+    },
+    {
+      "id": "gpt_4_turbo_inspect",
+      "name": "GPT-4 Turbo",
+      "date": "2024-04-09",
+      "ci_high": 6.736613,
+      "ci_low": 1.980046,
+      "estimate": 3.732787
+    },
+    {
+      "id": "gpt_4o_inspect",
+      "name": "GPT-4o",
+      "date": "2024-05-13",
+      "ci_high": 12.905741,
+      "ci_low": 4.001482,
+      "estimate": 6.991195
+    },
+    {
+      "id": "claude_3_5_sonnet_20240620_inspect",
+      "name": "Claude 3.5 Sonnet (Jun 2024)",
+      "date": "2024-06-20",
+      "ci_high": 22.384214,
+      "ci_low": 5.489734,
+      "estimate": 11.395377
+    },
+    {
+      "id": "o1_preview",
+      "name": "o1-preview",
+      "date": "2024-09-12",
+      "ci_high": 33.379877,
+      "ci_low": 11.716193,
+      "estimate": 20.326586
+    },
+    {
+      "id": "claude_3_5_sonnet_20241022_inspect",
+      "name": "Claude 3.5 Sonnet (Oct 2024)",
+      "date": "2024-10-22",
+      "ci_high": 40.82028,
+      "ci_low": 10.144026,
+      "estimate": 20.522872
+    },
+    {
+      "id": "o1_inspect",
+      "name": "o1",
+      "date": "2024-12-05",
+      "ci_high": 64.95249,
+      "ci_low": 21.164512,
+      "estimate": 38.831588
+    },
+    {
+      "id": "claude_3_7_sonnet_inspect",
+      "name": "Claude 3.7 Sonnet",
+      "date": "2025-02-24",
+      "ci_high": 104.226017,
+      "ci_low": 33.006168,
+      "estimate": 60.388937
+    },
+    {
+      "id": "o3_inspect",
+      "name": "o3",
+      "date": "2025-04-16",
+      "ci_high": 190.943818,
+      "ci_low": 74.615398,
+      "estimate": 119.732634
+    },
+    {
+      "id": "claude_4_opus_inspect",
+      "name": "Claude Opus 4",
+      "date": "2025-05-22",
+      "ci_high": 163.454074,
+      "ci_low": 59.994073,
+      "estimate": 100.366123
+    },
+    {
+      "id": "claude_4_1_opus_inspect",
+      "name": "Claude Opus 4.1",
+      "date": "2025-08-05",
+      "ci_high": 159.451918,
+      "ci_low": 59.272391,
+      "estimate": 100.472004
+    },
+    {
+      "id": "gpt_5_2025_08_07_inspect",
+      "name": "GPT-5",
+      "date": "2025-08-07",
+      "ci_high": 405.551565,
+      "ci_low": 112.641357,
+      "estimate": 203.012577
+    },
+    {
+      "id": "gemini_3_pro",
+      "name": "Gemini 3 Pro",
+      "date": "2025-11-18",
+      "ci_high": 379.235434,
+      "ci_low": 139.565157,
+      "estimate": 224.325884
+    },
+    {
+      "id": "gpt_5_1_codex_max_inspect",
+      "name": "GPT-5.1-Codex-Max",
+      "date": "2025-11-19",
+      "ci_high": 396.206723,
+      "ci_low": 134.31077,
+      "estimate": 223.714694
+    },
+    {
+      "id": "claude_opus_4_5_inspect",
+      "name": "Claude Opus 4.5",
+      "date": "2025-11-24",
+      "ci_high": 623.704698,
+      "ci_low": 161.717714,
+      "estimate": 292.994594
+    },
+    {
+      "id": "gpt_5_2",
+      "name": "GPT-5.2",
+      "date": "2025-12-11",
+      "ci_high": 815.177445,
+      "ci_low": 198.067494,
+      "estimate": 352.249302
+    },
+    {
+      "id": "claude_opus_4_6_inspect",
+      "name": "Claude Opus 4.6",
+      "date": "2026-02-05",
+      "ci_high": 3633.786163,
+      "ci_low": 316.685725,
+      "estimate": 718.80683
+    },
+    {
+      "id": "gpt_5_3_codex",
+      "name": "GPT-5.3-Codex",
+      "date": "2026-02-05",
+      "ci_high": 816.351994,
+      "ci_low": 194.913134,
+      "estimate": 349.530732
+    },
+    {
+      "id": "gemini_3_1_pro",
+      "name": "Gemini 3.1 Pro",
+      "date": "2026-02-19",
+      "ci_high": 694.750898,
+      "ci_low": 233.50073,
+      "estimate": 384.147435
+    },
+    {
+      "id": "gpt_5_4",
+      "name": "GPT-5.4",
+      "date": "2026-03-05",
+      "ci_high": 768.779526,
+      "ci_low": 186.581591,
+      "estimate": 341.735276
+    },
+    {
+      "id": "claude_mythos_preview_early_inspect",
+      "name": "Claude Mythos Preview (early)",
+      "date": "2026-04-07",
+      "ci_high": 3304.261235,
+      "ci_low": 508.876789,
+      "estimate": 1044.780145
+    }
+  ]
+}
