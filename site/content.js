@@ -456,7 +456,7 @@ export const slides = [
   },
   {
     "title": "참고 자료 · 다음에 읽을 것",
-    "body": "<ul class=\"resource-list\"><li><a href=\"https://github.com/serithemage/awesome-student-developer-resources\">학생 개발자 리소스 모음</a><span>학생 혜택과 개발 도구 탐색</span></li><li><a href=\"https://news.hada.io/topic?id=33794\">LLM 시대의 프로그래밍 학습</a><span>IDEATION.md의 추가 읽기 자료</span></li><li><a href=\"https://news.hada.io/topic?id=5046\">새로운 학습 방법: 학습은 기술이다</a><span>IDEATION.md의 추가 읽기 자료</span></li><li><a href=\"https://news.hada.io/topic?id=17382\">학습하는 방법 배우기</a><span>IDEATION.md의 추가 읽기 자료</span></li></ul>",
+    "body": "<ul class=\"resource-list\"><li><a href=\"https://github.com/serithemage/awesome-student-developer-resources\">학생 개발자 리소스 모음</a><span>학생 혜택과 개발 도구 탐색</span></li><li><a href=\"https://news.hada.io/topic?id=33794\">LLM 시대의 프로그래밍 학습</a><span>Mark Seemann · LLM이 개발 속도를 높여도 기초 이해가 부족해질 위험을 경고하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=5046\">새로운 학습 방법: 학습은 기술이다</a><span>Sahil Bloom · 커뮤니티 참여와 실전으로 학습 속도를 높이는 전략을 설명하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=17382\">학습하는 방법 배우기</a><span>Kevin Li · 효율적으로 배우는 방법을 익히는 것이 모든 지식 습득의 핵심이라는 글</span></li></ul>",
     "chapter": "부록",
     "kind": "references",
     "notes": "도구별 요금과 학생 혜택은 변경될 수 있으므로 신청 전에 공식 링크에서 다시 확인합니다. 이 링크들은 강연 이후 읽을 자료이며, 취업이나 창업 성공을 보장하는 근거가 아닙니다.",
