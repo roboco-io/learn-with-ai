@@ -182,15 +182,15 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "XY 문제: 수단보다 목적",
-    "body": "<div class=\"comparison\"><div><h3>Y · 원하는 구현</h3><p>“출석 확인용<br>얼굴 인식 앱을 만들어 줘.”</p></div><div><h3>X · 실제 문제</h3><p>“동아리 출석 확인에<br>매번 15분이 걸려요.”</p></div></div><p class=\"lead\">목적을 알면 QR 체크인 같은 더 작은 해법도 보입니다.</p>",
+    "title": "XY 문제 · 의도를 정확하게 전달하기",
+    "body": "<p>원래 해결하려는 문제를 생략하고, 스스로 고른 해결 방법만 질문하는 소통의 문제</p><div class=\"comparison\"><div><h3>구현 방법만 요청</h3><p>“얼굴 인식으로<br>출석을 확인하게 해 줘.”</p></div><div><h3>의도와 맥락까지 전달</h3><p>“출석 확인 시간을 줄이고 싶어.<br>지금은 이름을 한 명씩 불러.”</p></div></div><p class=\"lead\">AI에게 목적·현재 상황·원하는 결과를 함께 전달하세요.</p>",
     "chapter": "만들면서 배우기",
     "kind": "",
-    "notes": "수업용 가상 사례입니다. 사용자가 X를 해결하려고 Y를 떠올린 뒤 Y만 질문하는 것이 XY 문제입니다. 얼굴 인식이 목적이 아니라 출석 시간을 줄이는 것이 목적이라면 다른 선택지가 생깁니다. 배경과 원래 문제를 설명하면 AI도 더 적절한 대안을 제시할 수 있습니다.",
+    "notes": "수업용 가상 사례입니다. XY 문제는 원래 해결하려는 문제를 설명하지 않고, 자신이 해법이라고 생각한 방법의 구현만 묻는 소통의 문제입니다. AI가 얼굴 인식 기능을 정확히 만들어도 출석 확인 시간을 줄이려는 의도까지 이해했다고 볼 수는 없습니다. 핵심은 더 간단한 도구를 고르는 것이 아니라, 왜 요청하는지와 현재 상황, 원하는 결과를 정확히 전달하는 것입니다. 예를 들어 “이름을 한 명씩 부르느라 15분이 걸린다. 출석 확인 시간을 줄이고 싶다. 얼굴 인식을 생각했는데 이 목적에 적합한지 검토해 줘”라고 설명할 수 있습니다. AI도 목적이 불명확하면 확인 질문을 하도록 요청하세요. 앞 장의 의도 작성과 연결해, 학습 프로젝트라면 무엇을 배우려는지도 함께 전달하도록 안내합니다.",
     "refs": [
       [
-        "The XY Problem",
-        "https://xyproblem.info/"
+        "Wikipedia · XY problem",
+        "https://en.wikipedia.org/wiki/XY_problem"
       ]
     ],
     "minutes": 1
@@ -396,7 +396,7 @@ export const slides = [
   },
   {
     "title": "참고 자료 · 연구와 학습",
-    "body": "<ul class=\"resource-list\"><li><a href=\"https://metr.org/time-horizons/\">METR · Task-Completion Time Horizons</a><span>그래프 정의·원자료·해석의 한계</span></li><li><a href=\"https://themodernsoftware.dev/\">Stanford CS146S · The Modern Software Developer</a><span>에이전트와 협업하는 소프트웨어 개발</span></li><li><a href=\"https://www.learningscientists.org/blog/2016/6/23-1\">The Learning Scientists · Retrieval Practice</a><span>기억에서 꺼내고 확인하는 학습</span></li><li><a href=\"https://xyproblem.info/\">The XY Problem</a><span>해결 수단을 묻기 전에 원래 목적을 설명하기</span></li></ul>",
+    "body": "<ul class=\"resource-list\"><li><a href=\"https://metr.org/time-horizons/\">METR · Task-Completion Time Horizons</a><span>그래프 정의·원자료·해석의 한계</span></li><li><a href=\"https://themodernsoftware.dev/\">Stanford CS146S · The Modern Software Developer</a><span>에이전트와 협업하는 소프트웨어 개발</span></li><li><a href=\"https://www.learningscientists.org/blog/2016/6/23-1\">The Learning Scientists · Retrieval Practice</a><span>기억에서 꺼내고 확인하는 학습</span></li><li><a href=\"https://en.wikipedia.org/wiki/XY_problem\">Wikipedia · XY problem</a><span>원래 의도와 맥락을 전달하는 소통</span></li></ul>",
     "chapter": "부록",
     "kind": "references",
     "notes": "각 본문 슬라이드 아래의 출처 링크를 클릭하면 원문을 볼 수 있습니다. METR 데이터는 2026-09-27에 가져온 TH 1.1 스냅샷입니다. 다른 버전의 그래프나 이후 업데이트와 수치가 다를 수 있습니다.",
