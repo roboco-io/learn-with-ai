@@ -315,12 +315,24 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "학습용 도구 조합 · 월 2–3만원",
-    "body": "<div class=\"columns\"><div><h3>모델</h3><p>DeepSeek V4.1-Flash<br>추론·코드·설명</p></div><div><h3>에이전트</h3><p>Pi<br>터미널에서 작업 수행</p></div><div><h3>검색</h3><p>Exa<br>웹 자료 찾기</p></div></div><p class=\"lead\">학습용이라면 중국산 모델도 괜찮습니다.<br>월 2–3만원은 정액 보장이 아닌 <strong>예산 목표</strong>입니다.</p>",
+    "title": "학습용 도구 조합 · 두 가지 선택지",
+    "body": "<div class=\"tool-options\"><div><p class=\"tool-for\">처음이고, 금전적 여유가 있다면</p><h3>ChatGPT Plus 구독 (Codex 포함)</h3><p>월 29,000원 정액<br>설치·설정 부담 없이 바로 시작</p></div><div><p class=\"tool-for\">프로그래밍·AI 에이전트를 다뤄 봤다면</p><h3>DeepSeek V4.1-Flash + Pi 에이전트</h3><p>쓴 만큼 내는 API · 월 2–3만원 예산 목표<br>학습용이라면 중국산 모델도 괜찮습니다</p></div></div><p class=\"tool-common\"><strong>검색은 공통으로 Exa</strong>AI 에이전트가 웹 자료를 찾아 읽는 검색 API</p><div class=\"prompt\"><strong>먼저 확인하세요 · 학생 지원 프로그램</strong><br>OpenAI · Anthropic · Google Gemini 모두 학생·교육 프로그램을 운영합니다.<br>예: Google AI Plus 학생 1년 무료 (2026-12-31까지 신청)</div>",
     "chapter": "만들면서 배우기",
     "kind": "",
-    "notes": "강연자가 제안하는 가성비 조합입니다. 특정 도구만 정답이라는 뜻은 아닙니다. 공개 학습 자료로 작은 작업부터 시작하고 결과를 확인하세요. API와 검색은 사용량 과금이므로 사용량과 가격표를 함께 봅니다. 에이전트의 도구 실행 권한은 필요한 범위로 설정합니다. 월 2~3만원은 학습용 목표 예산으로 제시합니다. 실제 비용은 모델, 토큰 사용량, 캐시, 검색 횟수와 환율에 따라 달라집니다. 1주간 실제 지출을 보고 월 예산을 조정하세요. 예산 알림과 제공사가 지원하는 사용량 제한을 활용합니다. 알림 자체가 결제를 차단하는 것은 아닙니다.",
+    "notes": "강연자가 경험 수준에 따라 제안하는 두 가지 조합입니다. 특정 도구만 정답이라는 뜻은 아닙니다. 처음 시작하고 금전적 여유가 있다면 ChatGPT Plus 구독을 권합니다. 월 29,000원 정액이고 코딩 에이전트인 Codex를 함께 쓸 수 있어, API 키나 사용량 과금을 신경 쓰지 않고 바로 시작할 수 있습니다. 월 29,000원은 강연자가 제시한 국내 가격이며 OpenAI 공식 도움말에 확인되는 가격은 월 20달러입니다. 결제 전에 가격 페이지에서 다시 확인하세요. 어느 정도 프로그래밍이나 AI 에이전트를 다뤄 봤다면 DeepSeek V4.1-Flash 모델과 Pi 에이전트 조합을 권합니다. 학습용이라면 중국산 모델도 괜찮습니다. API는 사용량 과금이므로 월 2–3만원은 정액 보장이 아닌 학습용 예산 목표입니다. 실제 비용은 토큰 사용량, 캐시, 검색 횟수와 환율에 따라 달라지므로 1주간 실제 지출을 보고 조정하고, 예산 알림과 사용량 제한을 활용합니다. 에이전트의 도구 실행 권한은 필요한 범위로 설정합니다. 검색은 두 경우 모두 Exa를 권합니다. AI 에이전트가 웹 자료를 찾아 읽는 데 맞춘 검색 API입니다. 도구를 결제하기 전에 각 회사의 학생 지원 프로그램을 꼭 확인하세요. 2026-09-28 기준으로 확인한 내용입니다. Google은 대학생에게 Google AI Plus를 1년 무료로 제공하며 한국어 페이지가 있고 2026-12-31까지 신청할 수 있습니다. 체험 후에는 월 7,500원이 자동 청구됩니다. OpenAI의 ChatGPT Plus 무료 제공(Back to School)은 미국 대학생만 대상이며, ChatGPT Edu는 학교가 기관 단위로 도입하는 플랜입니다. Anthropic은 전 세계 학생이 지원할 수 있는 Claude Campus Program을 운영하지만 2026년 가을 모집은 마감되었으니 다음 모집을 확인하세요. Claude for Education은 학교 단위 플랜입니다. 조건과 기간은 자주 바뀌므로 공식 페이지를 직접 확인합니다.",
     "refs": [
+      [
+        "Google · Gemini 학생 혜택",
+        "https://gemini.google/students/"
+      ],
+      [
+        "OpenAI · 학생 대상 ChatGPT 혜택",
+        "https://help.openai.com/en/articles/20001493-chatgpt-back-to-school-offer-for-students"
+      ],
+      [
+        "Anthropic · Claude Campus Program",
+        "https://claude.com/programs/campus"
+      ],
       [
         "DeepSeek · 공식 가격",
         "https://api-docs.deepseek.com/quick_start/pricing/"
