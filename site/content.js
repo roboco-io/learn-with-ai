@@ -19,7 +19,7 @@ export const slides = [
   },
   {
     "title": "오늘의 이야기",
-    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 12분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 공개 · 장비와 도구 / 16분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 8분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
+    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 12분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 공개 · 장비와 도구 / 17분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
     "chapter": "시작",
     "kind": "",
     "notes": "총 60분: 도입 4분, 본문 51분, 질문 5분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 프로젝트의 의도를 정하고 매일 계획·구현·확인하는 흐름, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
@@ -200,6 +200,15 @@ export const slides = [
     "minutes": 1
   },
   {
+    "title": "AI의 답은 반드시 검증하세요",
+    "body": "<div class=\"verify\"><figure><img src=\"./assets/ai-mushroom-verify.jpg\" width=\"720\" height=\"938\" alt=\"숲에서 버섯을 들고 “이 버섯 먹을 수 있나요?”라고 묻자 AI가 “Yes!”라고 답한다. 다음 장면에서 묘비 옆의 AI가 “맞아요. 그 버섯은 독버섯이었어요. 혼란을 드려 죄송합니다!”라고 말한다.\"><figcaption>그림 · @goddeketal</figcaption></figure><div><p class=\"lead\">AI는 틀린 답도 자신 있게 말합니다.<br><strong>결과의 책임은 쓰는 사람에게 있습니다.</strong></p><ol class=\"steps\"><li><strong>직접 실행</strong><span>테스트와 실제 동작으로 확인</span></li><li><strong>원자료 확인</strong><span>공식 문서·원문과 대조</span></li><li><strong>교차 확인</strong><span>다른 출처·다른 모델에 묻기</span></li></ol><p class=\"edge\"><strong>검증 능력</strong>AI를 쓸수록 가장 중요해지는 실력</p></div></div>",
+    "chapter": "만들면서 배우기",
+    "kind": "",
+    "notes": "AI에게 먼저 구현을 맡기고 질문하며 배우는 방법에는 전제가 있습니다. AI의 답을 검증할 수 있어야 한다는 것입니다. 그림에서 AI는 먹어도 되느냐는 질문에 자신 있게 ‘Yes’라고 답하고, 결과가 나온 뒤에야 독버섯이었다고 사과합니다. AI는 틀린 답도 확신에 찬 말투로 내놓을 수 있고, 그 답을 쓴 결과의 책임은 사용자에게 남습니다. 코드라면 직접 실행하고 테스트를 돌려 실제 동작을 확인합니다. 사실이나 수치라면 공식 문서와 원문을 찾아 대조합니다. 중요한 판단이라면 다른 출처나 다른 모델에도 물어 교차 확인합니다. 톱다운 학습에서 ‘왜 이렇게 동작해?’라고 묻는 것도 검증의 한 방법입니다. 앞에서 말한 학습의 전문가란, 결국 AI의 결과를 검증할 수 있는 사람입니다. 그림 출처는 이미지에 표기된 @goddeketal입니다.",
+    "refs": [],
+    "minutes": 1
+  },
+  {
     "title": "경험은 건너뛸 수 없다",
     "body": "<blockquote>“There is no compression<br>algorithm for experience.”</blockquote><p>Werner Vogels · Amazon CTO</p><p class=\"lead\">경험을 압축할 수 없다면, 경험을 많이 하자.<br><strong>무조건 질보다 양입니다.</strong></p>",
     "chapter": "만들면서 배우기",
@@ -364,7 +373,7 @@ export const slides = [
     "kind": "",
     "notes": "예전에는 제품을 공개하기 전에 장비와 인력, 자금이 먼저 필요했습니다. 지금은 AI 에이전트가 구현을 돕고, 서버리스 클라우드는 사용량만큼 과금하므로 작은 트래픽의 초기 제품은 월 몇만 원 이하의 비용으로 운영할 수 있는 경우가 많습니다. 정확한 비용은 서비스 구성과 사용량에 따라 다르므로, 앞에서 본 예산 목표와 뒤의 클라우드 네이티브 슬라이드의 확인 방법을 함께 적용합니다.",
     "refs": [],
-    "minutes": 2
+    "minutes": 1
   },
   {
     "title": "프로젝트가 창업의 실험이 된다",

@@ -111,3 +111,9 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .cover .deck-url{color:#e1e8ff;margin-top:1cqw}
 .deck-url a{color:inherit;font-weight:700}
 .resource-list+.deck-url{margin-top:3cqw;padding-top:1.5cqw;border-top:1px solid var(--line)}
+.verify{display:grid;grid-template-columns:26cqw 1fr;gap:4cqw;align-items:center}
+.verify figure{margin:0}
+.verify img{display:block;width:100%;height:auto;max-height:34cqw;object-fit:contain;border-radius:.6cqw}
+.verify figcaption{font-size:1.1cqw;color:var(--muted);margin-top:.4cqw}
+.verify .lead{margin-top:0}
+.verify .steps li{grid-template-columns:4.5cqw 16cqw 1fr}
