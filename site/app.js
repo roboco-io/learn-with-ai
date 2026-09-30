@@ -88,6 +88,10 @@ let touch=null;
 $('#deck').addEventListener('touchstart',e=>{if(e.target.closest('a,button,svg'))return;touch={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY};},{passive:true});
 $('#deck').addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2)go(current+(dx<0?1:-1));touch=null;},{passive:true});
 go(fromHash(),false);
+// Minute-resolution clock; checking every second keeps it in step with the minute change.
+const clockFormat=new Intl.DateTimeFormat('ko-KR',{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+function tick(){const now=new Date();$('#clock').textContent=clockFormat.format(now);$('#clock').dateTime=now.toISOString();}
+tick();setInterval(tick,1000);
 let data, scale='log', chartFrame=0, finishChartAnimation=null;
 const ns='http://www.w3.org/2000/svg';
 function svgNode(name,attrs,text){const el=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(text!==undefined)el.textContent=text;return el;}

@@ -122,3 +122,11 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .deck-qr .lead{margin-top:0}
 .slide .deck-qr-url{font-size:3.6cqw;font-weight:800;letter-spacing:-.03em;margin-top:2cqw}
 .deck-qr-url a{color:var(--blue);text-decoration:none}
+.toolbar-left{display:flex;align-items:center;gap:18px}
+#clock{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink);padding-right:18px;border-right:1px solid var(--line)}
+@media screen{
+ .presentation .toolbar{display:flex;position:fixed;top:12px;left:16px;height:auto;padding:0;background:transparent;z-index:10}
+ .presentation .toolbar .brand,.presentation .toolbar nav{display:none}
+ .presentation #clock{color:#fff;background:#14234b99;border:0;border-radius:6px;padding:4px 10px;opacity:.6}
+}
+@media print{#clock{display:none}}
