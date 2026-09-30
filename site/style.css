@@ -117,3 +117,8 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .verify figcaption{font-size:1.1cqw;color:var(--muted);margin-top:.4cqw}
 .verify .lead{margin-top:0}
 .verify .steps li{grid-template-columns:4.5cqw 16cqw 1fr}
+.deck-qr{display:flex;align-items:center;gap:5cqw}
+.deck-qr>img{width:24cqw;height:24cqw;flex-shrink:0;border:1px solid var(--line);border-radius:.8cqw}
+.deck-qr .lead{margin-top:0}
+.slide .deck-qr-url{font-size:3.6cqw;font-weight:800;letter-spacing:-.03em;margin-top:2cqw}
+.deck-qr-url a{color:var(--blue);text-decoration:none}

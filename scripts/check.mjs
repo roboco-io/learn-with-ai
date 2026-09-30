@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { slides } from '../site/content.js';
-assert.equal(slides.length, 44);
+assert.equal(slides.length, 45);
 assert.equal(slides.reduce((sum, s) => sum + s.minutes, 0), 60);
 for (const s of slides) {
   assert(s.title && s.body && s.notes && s.chapter, 'Incomplete slide');
@@ -21,4 +21,4 @@ for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {
   assert(existsSync(new URL(`../site/${path}`, import.meta.url)), `Missing ${path}`);
 }
 assert(!existsSync(new URL('../site/CNAME', import.meta.url)), 'Inherit organization domain; do not claim apex');
-console.log('Verified: 44 complete slides, 60-minute timing, 26 METR records, local assets and project domain setup.');
+console.log('Verified: 45 complete slides, 60-minute timing, 26 METR records, local assets and project domain setup.');

@@ -9,6 +9,15 @@ export const slides = [
     "minutes": 1
   },
   {
+    "title": "발표자료는 여기에서",
+    "body": "<div class=\"deck-qr\"><img src=\"./assets/deck-qr.svg\" width=\"29\" height=\"29\" alt=\"발표자료 주소 https://roboco.io/learn-with-ai/ QR 코드\"><div><p class=\"lead\">휴대폰 카메라로 스캔하면<br>슬라이드와 참고 링크를 함께 볼 수 있습니다.</p><p class=\"deck-qr-url\"><a href=\"https://roboco.io/learn-with-ai/\">roboco.io/learn-with-ai</a></p></div></div>",
+    "chapter": "시작",
+    "kind": "",
+    "notes": "강연을 시작하기 전에 발표자료 주소를 안내합니다. QR 코드를 찍으면 이 슬라이드 전체와 각 슬라이드의 출처 링크를 휴대폰에서 볼 수 있습니다. 청중이 스캔할 시간을 잠시 주고 넘어갑니다.",
+    "refs": [],
+    "minutes": 1
+  },
+  {
     "title": "카페에서 노트북 하나로,<br>빅테크와 겨루는 시대",
     "body": "<p class=\"lead\">오늘은 취업 준비를 넘어,<br><strong>리스크 없는 창업</strong>을 먼저 해 보자는 이야기입니다.</p>",
     "chapter": "시작",
@@ -19,7 +28,7 @@ export const slides = [
   },
   {
     "title": "오늘의 이야기",
-    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 12분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 공개 · 장비와 도구 / 17분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
+    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 공개 · 장비와 도구 / 17분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
     "chapter": "시작",
     "kind": "",
     "notes": "총 60분: 도입 4분, 본문 51분, 질문 5분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 프로젝트의 의도를 정하고 매일 계획·구현·확인하는 흐름, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
@@ -156,7 +165,7 @@ export const slides = [
     "kind": "",
     "notes": "프로필의 문장을 실제 활동과 결과물로 바꿔 봅니다. “협업을 잘합니다”보다 내가 받은 리뷰와 반영한 변경을 보여주는 편이 구체적입니다. 실패한 실험도 배운 점과 다음 판단을 함께 기록하면 좋은 자료가 됩니다.",
     "refs": [],
-    "minutes": 2
+    "minutes": 1
   },
   {
     "title": "예시 · 강연자의 GitHub 프로필",
