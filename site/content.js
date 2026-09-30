@@ -27,7 +27,7 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "정도현 · serithemage",
+    "title": "정도현 · dohyun@roboco.io",
     "body": "<p>1995년부터 소프트웨어 개발 · AI·클라우드 개발과 교육</p><div class=\"speaker-profile\"><img src=\"./assets/serithemage.png\" width=\"460\" height=\"460\" alt=\"serithemage GitHub 프로필 아바타\"><div class=\"speaker-bio\"><div><h3>Roboco.io 창업자 · AI 컨설턴트</h3><p>기업의 AI 도입 컨설팅과 실무 교육</p></div><div><h3>전 AWS 개발자 · 테크니컬 트레이너</h3><p>Senior Software Development Engineer · 2022–2024<br>Technical Trainer / Senior Technical Trainer · 2016–2022</p></div><div><h3>『핸즈온 바이브 코딩』 저자</h3><p>한빛미디어 · 2025</p></div></div></div>",
     "chapter": "시작",
     "kind": "",
