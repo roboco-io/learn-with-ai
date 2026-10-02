@@ -55,14 +55,15 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "여러분이 맞이할 현실",
-    "body": "<p class=\"lead\">AI가 혼자 해내는 일의 길이가<br>몇 달마다 두 배로 늘어나고 있습니다.</p>",
+    "title": "우리가 적응할 시간은<br>얼마나 남았을까요?",
+    "body": "<div class=\"pace-reveal\" data-step=\"0\"><button class=\"pace-sequence\" type=\"button\" aria-label=\"변화 속도에 대한 질문: 몇 달. 클릭하면 다음 표현을 봅니다.\"><span class=\"pace-term\" data-stage=\"0\">몇 달</span><span class=\"pace-arrow\" data-stage=\"1\" aria-hidden=\"true\">→</span><span class=\"pace-term\" data-stage=\"1\" aria-hidden=\"true\">몇 주?</span><span class=\"pace-arrow\" data-stage=\"2\" aria-hidden=\"true\">→</span><span class=\"pace-term\" data-stage=\"2\" aria-hidden=\"true\">며칠?</span></button><div class=\"pace-controls\"><span class=\"pace-hint\" aria-live=\"polite\">1 / 3 · 클릭·→·Space로 다음 표현</span><button class=\"pace-reset\" type=\"button\">다시 보기</button></div></div><p class=\"lead\">변화가 더 빨라진다면,<br>우리의 학습 방식도 달라져야 합니다.</p><p class=\"fine\">변화 속도를 생각하기 위한 질문 · 측정 수치 아님</p>",
     "chapter": "여러분이 맞이할 현실",
-    "kind": "section",
-    "notes": "이제 AI가 실제로 어디까지 왔는지 데이터로 확인합니다. 다음 그래프는 과장된 전망이 아니라 METR라는 연구 기관이 공개한 측정 결과입니다.",
+    "kind": "section pace-slide",
+    "notes": "AI가 발전하는 속도에 대해 청중에게 질문하는 슬라이드입니다. 처음에는 몇 달만 보입니다. 문구를 클릭하거나 다음 슬라이드 버튼, 오른쪽 화살표, PageDown, Space를 누르면 몇 달에 삭제선이 그어지고 몇 주?가 나타납니다. 한 번 더 누르면 몇 주?에도 삭제선이 그어지고 며칠?이 나타나며 단어 사이 간격이 좁아집니다. 마지막 단계에서 다시 다음으로 진행하면 METR 그래프로 넘어갑니다. 왼쪽 화살표나 이전 버튼으로는 한 단계씩 되돌릴 수 있고, 다시 보기 버튼으로 처음부터 보여 줄 수 있습니다. 이 표현은 실제로 AI 능력이 몇 주나 며칠마다 두 배가 된다는 주장이 아니라 변화가 더 빨라진다면 어떻게 배워야 할지 묻는 연출입니다. 능력의 지수적 증가와 배가 주기의 지속적인 단축은 서로 다른 주장임을 구분하세요. 질문을 던진 뒤 다음 슬라이드에서 METR가 측정한 과제 길이와 실제 추세를 설명합니다.",
     "refs": [],
     "minutes": 1
   },
+
   {
     "title": "AI가 해내는 과제의 길이,<br>약 4개월마다 2배",
     "body": "<div class=\"chart-controls\" role=\"group\" aria-label=\"그래프 축 선택\"><button data-scale=\"log\" aria-pressed=\"true\">로그 축</button><button data-scale=\"linear\" aria-pressed=\"false\">선형 축</button><span>성공률 50% 기준 · 인간 전문가 소요 시간</span></div><div id=\"metr-chart\" class=\"chart\"></div><p class=\"chart-mobile-hint\">그래프를 좌우로 밀어 모델 이름을 확인하세요.</p><p class=\"chart-detail\" id=\"chart-detail\" aria-live=\"polite\">주요 모델 이름 표시 · 점을 선택하면 추정치와 신뢰구간을 볼 수 있습니다.</p><p class=\"fine\">METR TH 1.1 · 공개 원자료 26개 모델 · 원문 갱신 2026-05-08 · 16시간 초과 추정은 신뢰도가 낮음 · * early 평가</p>",

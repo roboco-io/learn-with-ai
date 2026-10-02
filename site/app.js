@@ -8,8 +8,10 @@ const sections = [...document.querySelectorAll('.slide')];
 let current = 0;
 function fromHash() {const n = Number(location.hash.slice(1)); return Number.isInteger(n) && n >= 1 && n <= slides.length ? n-1 : 0;}
 function go(index, update = true) {
+ const previous=current;
  current = Math.max(0, Math.min(slides.length-1, index));
  sections.forEach((el,i)=>{el.hidden=i!==current;});
+ if(previous!==current && sections[current].querySelector('.pace-reveal'))setPaceStep(0);
  const s = slides[current];
  $('#counter').textContent = `${String(current+1).padStart(2,'0')} / ${slides.length}`;
  $('#chapter').textContent = s.chapter;
@@ -25,7 +27,31 @@ function go(index, update = true) {
  if(update) location.hash=String(current+1);
 }
 window.addEventListener('hashchange',()=>go(fromHash(),false));
-$('#prev').onclick=()=>go(current-1); $('#next').onclick=()=>go(current+1);
+function setPaceStep(step) {
+ const reveal=sections[current].querySelector('.pace-reveal');
+ if(!reveal)return;
+ reveal.dataset.step=step;
+ reveal.querySelectorAll('[data-stage]').forEach(el=>{
+  const stage=Number(el.dataset.stage);
+  el.classList.toggle('is-shown',stage<=step);
+  el.classList.toggle('is-past',el.classList.contains('pace-term') && stage<step);
+  el.setAttribute('aria-hidden',String(stage>step || el.classList.contains('pace-arrow')));
+ });
+ const labels=['몇 달','몇 주?','며칠?'];
+ reveal.querySelector('.pace-sequence').setAttribute('aria-label',`변화 속도에 대한 질문: ${labels[step]} ${step<2?'클릭하면 다음 표현을 봅니다.':'클릭하면 실제 측정 그래프로 이동합니다.'}`);
+ reveal.querySelector('.pace-hint').textContent=`${step+1} / 3 · ${step<2?'클릭·→·Space로 다음 표현':'다음: 실제 측정 그래프'}`;
+}
+function advance(delta) {
+ const reveal=sections[current].querySelector('.pace-reveal');
+ if(reveal){
+  const next=Number(reveal.dataset.step)+delta;
+  if(next>=0 && next<=2){setPaceStep(next);return;}
+ }
+ go(current+delta);
+}
+$('#prev').onclick=()=>advance(-1); $('#next').onclick=()=>advance(1);
+document.querySelectorAll('.pace-sequence').forEach(button=>button.onclick=()=>advance(1));
+document.querySelectorAll('.pace-reset').forEach(button=>button.onclick=()=>setPaceStep(0));
 function toggleNotes(force) {const open=force??$('#notes').hidden; $('#notes').hidden=!open; $('#notes-toggle').setAttribute('aria-expanded',open); if(!open && document.activeElement === $('#notes-close')) $('#notes-toggle').focus();}
 $('#notes-toggle').onclick=()=>toggleNotes(); $('#notes-close').onclick=()=>toggleNotes(false);
 function showOutline() {$('#outline').showModal(); $('#outline-list [aria-current="true"]').scrollIntoView({block:'center'});}
@@ -79,15 +105,15 @@ document.addEventListener('keydown',e=>{
  const k=e.key.toLowerCase();
  if(e.code==='KeyF'||k==='f'){e.preventDefault();if(!e.repeat)fullscreen();return;}
  if(k==='escape'&&document.body.classList.contains('presentation')){e.preventDefault();leavePresentation();return;}
- if(['arrowright','pagedown',' '].includes(k)){e.preventDefault();go(current+1);}
- else if(['arrowleft','pageup'].includes(k)){e.preventDefault();go(current-1);}
+ if(['arrowright','pagedown',' '].includes(k)){e.preventDefault();advance(1);}
+ else if(['arrowleft','pageup'].includes(k)){e.preventDefault();advance(-1);}
  else if(k==='home'){e.preventDefault();go(0);}
  else if(k==='end'){e.preventDefault();go(slides.length-1);}
  else if(k==='o')showOutline();else if(k==='n')toggleNotes();else if(k==='escape')toggleNotes(false);
 });
 let touch=null;
 $('#deck').addEventListener('touchstart',e=>{if(e.target.closest('a,button,svg'))return;touch={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY};},{passive:true});
-$('#deck').addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2)go(current+(dx<0?1:-1));touch=null;},{passive:true});
+$('#deck').addEventListener('touchend',e=>{if(!touch)return;const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*2)advance(dx<0?1:-1);touch=null;},{passive:true});
 go(fromHash(),false);
 // Minute-resolution clock; checking every second keeps it in step with the minute change.
 const clockFormat=new Intl.DateTimeFormat('ko-KR',{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
