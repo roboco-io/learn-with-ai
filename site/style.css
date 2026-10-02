@@ -144,3 +144,7 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 @media(max-width:700px){.quote-portrait{flex-direction:column;align-items:flex-start;gap:5cqw;margin-bottom:4cqw}.quote-portrait img{width:38cqw;height:38cqw}.quote-portrait blockquote{font-size:5.7cqw;margin:0 0 2cqw}}
 
 @media(min-width:701px){.experience-slide .quote-portrait img{width:17cqw;height:17cqw}.experience-slide .quote-portrait{margin-bottom:1cqw}.experience-slide .lead{font-size:2.6cqw}}
+
+.chapter-divider{justify-content:center}
+.chapter-divider h2{margin-top:0}
+.chapter-divider .slide-content{flex:0 0 auto}

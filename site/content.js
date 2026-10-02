@@ -10,19 +10,20 @@ export const slides = [
   },
   {
     "title": "발표자료는 여기에서",
-    "body": "<div class=\"deck-qr\"><img src=\"./assets/deck-qr.svg\" width=\"29\" height=\"29\" alt=\"발표자료 주소 https://roboco.io/learn-with-ai/ QR 코드\"><div><p class=\"lead\">휴대폰 카메라로 스캔하면<br>슬라이드와 참고 링크를 함께 볼 수 있습니다.</p><p class=\"deck-qr-url\"><a href=\"https://roboco.io/learn-with-ai/\">roboco.io/learn-with-ai</a></p></div></div>",
+    "body": "<div class=\"deck-qr\"><img src=\"./assets/deck-qr.svg\" width=\"29\" height=\"29\" alt=\"발표자료 주소 https://roboco.io/learn-with-ai/ QR 코드\"><div><p class=\"lead\">휴대폰 카메라로 스캔하면<br>슬라이드와 참고 링크를 함께 볼 수 있습니다.</p><p class=\"deck-qr-url\"><a href=\"https://roboco.io/learn-with-ai/\">roboco.io/learn-with-ai</a></p><p class=\"fine\">소스 코드 · GitHub 리포지토리<br><a href=\"https://github.com/roboco-io/learn-with-ai\" target=\"_blank\" rel=\"noopener\">github.com/roboco-io/learn-with-ai</a></p></div></div>",
     "chapter": "시작",
     "kind": "",
-    "notes": "강연을 시작하기 전에 발표자료 주소를 안내합니다. QR 코드를 찍으면 이 슬라이드 전체와 각 슬라이드의 출처 링크를 휴대폰에서 볼 수 있습니다. 청중이 스캔할 시간을 잠시 주고 넘어갑니다.",
+    "notes": "강연을 시작하기 전에 발표자료 주소를 안내합니다. QR 코드를 찍으면 이 슬라이드 전체와 각 슬라이드의 출처 링크를 휴대폰에서 볼 수 있습니다. 청중이 스캔할 시간을 잠시 주고 넘어갑니다. 발표자료의 소스 코드와 릴리즈 노트는 화면의 GitHub 리포지토리 링크에서 확인할 수 있습니다.",
     "refs": [],
     "minutes": 1
   },
+
   {
     "title": "오늘의 이야기",
-    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 커뮤니티 · 장비와 도구 / 14분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
+    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 커뮤니티 · 장비와 도구 / 15분 30초</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분 30초</span></li></ol>",
     "chapter": "시작",
     "kind": "",
-    "notes": "총 60분: 도입 4분, 본문 47분, 질문 9분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 오픈소스 참여로 배우는 방법, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
+    "notes": "총 60분: 도입 5분, 본문 49분, 질문 6분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 오픈소스 참여로 배우는 방법, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
     "refs": [],
     "minutes": 1
   },
@@ -42,6 +43,15 @@ export const slides = [
         "https://www.hanbit.co.kr/books/B3757318997"
       ]
     ],
+    "minutes": 1
+  },
+  {
+    "title": "질문은 언제든지 환영합니다",
+    "body": "<p class=\"lead\">본격적으로 시작하기 전에, 한 가지 부탁드립니다.</p><p class=\"lead\"><strong>궁금한 점이 생기면<br>제 말을 끊더라도 바로 질문해 주세요.</strong></p><p>이해가 안 되는 부분도, 다른 생각도 좋습니다.<br>마지막 질의응답 시간까지 기다리지 않으셔도 됩니다.</p>",
+    "chapter": "시작",
+    "kind": "statement",
+    "notes": "본격적으로 강의를 시작하기 전에 질문을 환영한다는 점을 분명히 안내합니다. 궁금한 점이나 이해가 안 되는 부분이 생기면 발표자의 말을 끊더라도 바로 질문해 달라고 요청하세요. 다른 생각이나 자신의 경험을 나누는 것도 좋습니다. 마지막 질의응답 시간을 기다릴 필요가 없다고 말하고, 청중의 반응을 잠시 살핀 뒤 강의를 시작합니다.",
+    "refs": [],
     "minutes": 1
   },
   {
@@ -191,6 +201,15 @@ export const slides = [
     "minutes": 1
   },
   {
+    "title": "만들면서<br>배우기",
+    "body": "<p class=\"lead\">AI와 작게 만들고,<br>직접 확인하며 이해를 쌓습니다.</p>",
+    "chapter": "만들면서 배우기",
+    "kind": "section chapter-divider",
+    "notes": "취업을 위해 어떤 증거를 만들지 정했다면, 이제 실제로 배우고 만드는 방법으로 넘어갑니다. 앞으로 AI와 구현하고, 답을 검증하고, 작은 시도를 많이 완주하는 방법을 다룹니다. 약 30초 동안 방향만 소개하고 다음 슬라이드의 톱다운 학습으로 이어 갑니다.",
+    "refs": [],
+    "minutes": 0.5
+  },
+  {
     "title": "AI 시대의 톱다운 학습",
     "body": "<p class=\"lead\">AI가 먼저 구현하게 하고,<br>모든 것이 명확해질 때까지 AI를 붙잡고 묻습니다.</p><div class=\"cycle\"><span>AI가 구현</span><b>→</b><span>원리·세부사항 질문</span><b>→</b><span>이해될 때까지 반복</span><b>→</b><span>아하 모먼트</span></div><p class=\"topdown-q\">“이 코드는 왜 이렇게 동작해?” · “이 줄을 지우면 어떻게 돼?” · “다른 방법과 무엇이 달라?”</p>",
     "chapter": "만들면서 배우기",
@@ -227,6 +246,15 @@ export const slides = [
     "minutes": 1
   },
 
+  {
+    "title": "함께 배우고,<br>꾸준히 쌓기",
+    "body": "<p class=\"lead\">참여하고, 질문하고, 기록하며<br>작은 시도를 나의 실력으로 만듭니다.</p>",
+    "chapter": "만들면서 배우기",
+    "kind": "section chapter-divider",
+    "notes": "많이 시도하라는 메시지에서 그 시도를 지속하는 구체적인 습관으로 전환합니다. 오픈소스 참여, 의도를 전달하는 질문, 매일의 기록, 발표와 커뮤니티 활용을 하나의 학습 흐름으로 안내합니다. 약 30초 동안 소개하고 실제 참여 방법으로 넘어갑니다.",
+    "refs": [],
+    "minutes": 0.5
+  },
   {
     "title": "바이브 코딩은<br>참여하면서 배우세요",
     "body": "<p class=\"lead\">AI로 개발하는 오픈소스 프로젝트에<br><strong>작은 기여 하나를 해 보세요.</strong></p><ol class=\"steps\"><li><strong>작업 방식 읽기</strong><span>기여 안내 · 에이전트 지침 · 기존 PR</span></li><li><strong>작게 해결하기</strong><span>문제 재현 → AI와 수정 → 직접 검증</span></li><li><strong>리뷰로 배우기</strong><span>피드백 반영 · 판단의 이유 기록</span></li></ol>",
@@ -345,6 +373,15 @@ export const slides = [
     "notes": "자신의 이름으로 누적한 기록은 내가 무엇을 이해했는지 보여줍니다. ‘학위보다 저서가 값지다’는 강연자의 관점이며, 학위의 효용은 진로마다 다릅니다. 지금 시작할 수 있는 것은 작게 배운 한 가지를 AI 도움 없이 정확히 설명하는 글입니다.",
     "refs": [],
     "minutes": 1
+  },
+  {
+    "title": "학습 환경<br>준비하기",
+    "body": "<p class=\"lead\">나에게 맞는 장비와 도구를 고르고,<br>학생 혜택을 활용합니다.</p>",
+    "chapter": "만들면서 배우기",
+    "kind": "section chapter-divider",
+    "notes": "배우고 공유하는 방법을 살펴봤다면 이를 실행할 환경을 준비할 차례입니다. 다음 세 장에서 노트북, 학생 혜택, 학습용 도구 선택을 다룹니다. 환경 준비 자체가 목적이 아니라 직접 만들기 위한 출발점이라는 점을 약 30초 동안 짚습니다.",
+    "refs": [],
+    "minutes": 0.5
   },
   {
     "title": "장비: 맥북을 장만하세요",
@@ -513,6 +550,15 @@ export const slides = [
     "minutes": 1
   },
   {
+    "title": "이제,<br>나의 첫 행동",
+    "body": "<p class=\"lead\">오늘 들은 것 중 하나를 골라,<br>작은 행동으로 옮겨 보세요.</p>",
+    "chapter": "첫 행동",
+    "kind": "section chapter-divider",
+    "notes": "AI 시대의 현실, 취업 설계, 만들면서 배우기, 창업 실험과 차별점까지 살펴본 뒤 마지막 행동으로 전환합니다. 모든 것을 한꺼번에 바꾸기보다 자신에게 필요한 하나를 고르도록 약 30초 동안 안내합니다. 이어지는 두려움과 싸우기와 오늘 시작할 세 가지로 연결합니다.",
+    "refs": [],
+    "minutes": 0.5
+  },
+  {
     "title": "두려움과 싸우세요",
     "body": "<p class=\"lead\">대부분 조금 해 보다가 학점·자격증·토익 같은<br>남들이 하는 안전한 길로 돌아갑니다.</p><p class=\"lead\">인류가 경험해 보지 못한 시대입니다.<br>오늘 들은 것을 스스로 판단해서, 행동으로 옮겨 보세요.</p>",
     "chapter": "첫 행동",
@@ -537,7 +583,7 @@ export const slides = [
     "kind": "closing",
     "notes": "질문은 개인의 상황을 함께 들어 주세요. 어떤 역할을 탐색하는지, 현재 만들고 있는 것은 무엇인지, 어디에서 막혔는지를 구체적으로 이야기하면 도움이 됩니다. 커뮤니티에서는 질문의 배경과 시도한 것, 확인하고 싶은 것을 함께 공유하도록 안내합니다.",
     "refs": [],
-    "minutes": 9
+    "minutes": 6
   },
   {
     "title": "참고 자료 · 연구와 학습",
