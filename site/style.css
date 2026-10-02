@@ -130,3 +130,10 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
  .presentation #clock{color:#fff;background:#14234b99;border:0;border-radius:6px;padding:4px 10px;opacity:.6}
 }
 @media print{#clock{display:none}}
+
+.chart .model-label{font-size:14px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.chart .model-leader{stroke:var(--muted);stroke-width:1;opacity:.55;pointer-events:none}
+.chart .unreliable-label{fill:#865012}
+.chart-mobile-hint{display:none}
+@media(max-width:700px){.chart{height:244px;overflow-x:auto;overflow-y:hidden}.chart svg{width:760px;height:244px;max-width:none}.slide .chart-mobile-hint{display:block;font-size:3cqw;color:var(--muted);margin-top:1cqw}}
+@media print{.chart-mobile-hint{display:none!important}}

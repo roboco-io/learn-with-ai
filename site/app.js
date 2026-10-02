@@ -100,14 +100,14 @@ function duration(m){return m<1?`${(m*60).toFixed(1)}초`:m<60?`${m.toFixed(1)}�
 function transitionChart(svg, animate) {
  cancelAnimationFrame(chartFrame);
  const previous=$('#metr-chart svg');
- const motion=animate && previous && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const motion=animate && previous;
  const tweens=[];
  if(motion){
   const oldNodes=new Map([...previous.querySelectorAll('[data-motion]')].map(el=>[el.dataset.motion,el]));
   for(const el of svg.querySelectorAll('[data-motion]')){
    const old=oldNodes.get(el.dataset.motion);
    if(old){
-    for(const attr of ['y','y1','y2','cy','height','opacity']){
+    for(const attr of ['x','x1','x2','cx','y','y1','y2','cy','height','opacity']){
      if(!el.hasAttribute(attr) && attr!=='opacity')continue;
      const to=Number(el.getAttribute(attr)??1),from=Number(old.getAttribute(attr)??1);
      if(from!==to){el.setAttribute(attr,from);tweens.push({el,attr,from,to});}
@@ -127,7 +127,7 @@ function transitionChart(svg, animate) {
  svg.dataset.animating='true';
  const start=performance.now();
  function step(now){
-  const t=Math.min(1,(now-start)/550),ease=t*t*(3-2*t);
+  const t=Math.min(1,(now-start)/900),ease=t*t*(3-2*t);
   for(const v of tweens)v.el.setAttribute(v.attr,v.from+(v.to-v.from)*ease);
   if(t<1)chartFrame=requestAnimationFrame(step);else finish();
  }
@@ -135,7 +135,7 @@ function transitionChart(svg, animate) {
 }
 window.addEventListener('beforeprint',()=>finishChartAnimation?.());
 function drawChart(animate=false){
- const W=1000,H=320,L=76,R=34,T=46,B=38, max=1200,min=.006;
+ const W=1000,H=320,L=76,R=230,T=46,B=38, max=1200,min=.006;
  const start=Date.UTC(2019,0,1),end=Date.UTC(2026,8,1);
  const x=d=>L+(Date.parse(d)-start)/(end-start)*(W-L-R);
  const y=v=>H-B-(scale==='log'?(Math.log(Math.max(v,min))-Math.log(min))/(Math.log(max)-Math.log(min)):v/max)*(H-T-B);
@@ -151,22 +151,41 @@ function drawChart(animate=false){
  const notice=svgNode('text',{x:L+14,y:21,style:'fill:#865012;font-size:13px'});
  notice.append(svgNode('tspan',{x:L+14},'16시간 초과 구간 · 현재 과제 구성으로는'),svgNode('tspan',{x:L+14,dy:16},'측정 신뢰도가 낮음 (METR)'));
  svg.append(notice);
- // 8h sits too close to 16h on the log axis for both labels to stay legible.
- const ticks=scale==='log'?[1/60,1,60,960]:[0,240,480,720,960];
- ticks.forEach(v=>{const yy=y(v);svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,'data-motion':`grid-${v}`,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,'data-motion':`tick-${v}`,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
+ // Keep both sets of ticks in the SVG: their positions follow the same scale
+ // interpolation as the points, while unneeded labels fade out.
+ const visibleTicks=scale==='log'?[1/60,1,60,960]:[0,240,480,720,960];
+ const ticks=[0,1/60,1,60,240,480,720,960];
+ ticks.forEach(v=>{const yy=y(Math.max(scale==='log'?min:0,v)),opacity=visibleTicks.includes(v)?1:0;svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,opacity,'data-motion':`grid-${v}`,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,opacity,'aria-hidden':opacity===0,'data-motion':`tick-${v}`,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
  for(let yr=2019;yr<=2026;yr++){const xx=x(`${yr}-01-01`);svg.append(svgNode('text',{x:xx,y:H-9,'text-anchor':'middle'},yr));}
  svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,'data-motion':'threshold',stroke:'#b36817','stroke-dasharray':'5 5'}));
+ const earlyLabels=new Set(['gpt2','davinci_002','gpt_4']);
+ const recentLabels=new Set(['gpt_5_2025_08_07_inspect','gemini_3_1_pro','gpt_5_4','claude_opus_4_6_inspect','claude_mythos_preview_early_inspect']);
  data.models.forEach(m=>{
   const xx=x(m.date),yy=y(m.estimate);
   svg.append(svgNode('line',{x1:xx,x2:xx,y1:y(Math.max(min,m.ci_low)),y2:y(Math.min(max,m.ci_high)),class:'ci','data-motion':`ci-${m.id}`}));
   // An upward cap indicates that the original interval continues beyond the plot.
   if(m.ci_high>max) svg.append(svgNode('path',{d:`M ${xx-3} ${T+4} L ${xx} ${T} L ${xx+3} ${T+4}`,fill:'none',stroke:'#254fd5','stroke-opacity':.5}));
   const label=`${m.name} · ${m.date} · ${duration(m.estimate)} · 95% 신뢰구간 ${duration(m.ci_low)}–${duration(m.ci_high)}`;
-  const p=svgNode('circle',{cx:xx,cy:yy,'data-motion':`point-${m.id}`,r:5.5,class:`point${m.estimate>960?' unreliable':''}`,tabindex:0,role:'button','aria-label':label});
+  const p=svgNode('circle',{cx:xx,cy:yy,'data-motion':`point-${m.id}`,r:earlyLabels.has(m.id)||recentLabels.has(m.id)?6:4.5,class:`point${m.estimate>960?' unreliable':''}`,tabindex:0,role:'button','aria-label':label});
   p.append(svgNode('title',{},label));
   const show=()=>{$('#chart-detail').textContent=label;};
   p.addEventListener('focus',show);p.addEventListener('mouseenter',show);p.addEventListener('click',show);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
   svg.append(p);
+ });
+ // Early milestones are spread across the timeline; recent models get a
+ // separate label column so dense release dates remain readable in both views.
+ data.models.filter(m=>earlyLabels.has(m.id)).forEach(m=>{
+  const name=m.id==='davinci_002'?'GPT-3':m.name;
+  svg.append(svgNode('text',{x:x(m.date),y:y(m.estimate)-14,'text-anchor':'middle',class:'model-label','data-motion':`label-${m.id}`},name));
+ });
+ const labels=data.models.filter(m=>recentLabels.has(m.id)).map(m=>({m,yy:y(m.estimate)})).sort((a,b)=>a.yy-b.yy);
+ labels.forEach((label,i)=>{label.ly=Math.max(T+9,label.yy,i?labels[i-1].ly+25:0);});
+ for(let i=labels.length-1;i>=0;i--)labels[i].ly=Math.min(labels[i].ly,H-B-9-(labels.length-1-i)*25);
+ labels.forEach(({m,yy,ly})=>{
+  const labelX=W-R+24;
+  svg.append(svgNode('line',{x1:x(m.date)+8,y1:yy,x2:labelX-7,y2:ly,class:'model-leader','data-motion':`leader-${m.id}`}));
+  const name=m.id==='claude_mythos_preview_early_inspect'?'Claude Mythos Preview*':m.name;
+  svg.append(svgNode('text',{x:labelX,y:ly+4,class:`model-label${m.estimate>960?' unreliable-label':''}`,'data-motion':`label-${m.id}`},name));
  });
  transitionChart(svg,animate);
 }
