@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { slides } from '../site/content.js';
+import { fitExponentialTrend } from '../site/trend.js';
 import { checkRelease } from './release.mjs';
 import { fileURLToPath } from 'node:url';
 assert.equal(slides.length, 50);
@@ -18,6 +19,22 @@ for (const m of data.models) {
   assert(m.ci_low > 0 && m.ci_low <= m.estimate && m.estimate <= m.ci_high);
   assert(Number.isFinite(Date.parse(m.date)));
 }
+// A known ten-day doubling series checks the regression independently of the display.
+const syntheticTrend = fitExponentialTrend([
+  { date: '2023-01-01', estimate: 2 },
+  { date: '2023-01-11', estimate: 4 },
+  { date: '2023-01-21', estimate: 8 },
+  { date: '2022-01-01', estimate: 500 },
+  { date: '2023-02-01', estimate: 1000 },
+]);
+assert.equal(syntheticTrend.count, 3);
+assert(Math.abs(syntheticTrend.doublingDays - 10) < 1e-8);
+assert(Math.abs(syntheticTrend.valueAt(Date.parse('2023-01-06')) - Math.sqrt(8)) < 1e-8);
+assert.equal(fitExponentialTrend([{ date: '2023-01-01', estimate: 2 }]), null);
+assert.equal(fitExponentialTrend([{ date: '2023-01-01', estimate: 2 }, { date: '2023-01-01', estimate: 4 }]), null);
+const trend = fitExponentialTrend(data.models);
+assert(trend && trend.doublingDays > 0);
+assert(trend.valueAt(trend.end) > trend.valueAt(trend.start));
 const html=readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
 for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {
   assert(existsSync(new URL(`../site/${path}`, import.meta.url)), `Missing ${path}`);

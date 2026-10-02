@@ -171,3 +171,6 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .pace-slide .fine{color:#dce6ff;font-size:1.4cqw}
 @media(max-width:700px){.pace-slide h2{font-size:8cqw;margin-bottom:6cqw}.pace-sequence{gap:2cqw}.pace-term{font-size:8cqw}.pace-arrow{font-size:4cqw}.pace-controls{font-size:3cqw;margin:3cqw 0 7cqw}.pace-reset{padding:1.5cqw 2cqw}.pace-slide .fine{font-size:3cqw}}
 @media print{.pace-controls{display:none}.pace-sequence{gap:1.5cqw!important}.pace-sequence [data-stage]{visibility:visible!important;opacity:1!important;transform:none!important}.pace-term[data-stage="0"]::after,.pace-term[data-stage="1"]::after{transform:scaleX(1)}.pace-term[data-stage="2"]{color:#ffe59d}}
+
+.metr-trend,.trend-key{stroke:#b52e70;stroke-width:3;stroke-linecap:round;fill:none;pointer-events:none}
+.chart .trend-caption{fill:#a12461;font-size:13px;font-weight:700}

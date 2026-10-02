@@ -1,17 +1,20 @@
 import { slides } from './content.js';
 import { release } from './release.js';
+import { fitExponentialTrend } from './trend.js';
 const $ = (s) => document.querySelector(s);
 const cleanTitle = (s) => s.replace(/<br\s*\/?\s*>/g, ' ').replace(/<[^>]*>/g, '');
 $('#deck').innerHTML = slides.map((s, i) => `<section class="slide ${s.kind}" id="slide-${i+1}" aria-label="${i+1}. ${cleanTitle(s.title)}" ${i ? 'hidden' : ''}><${i ? 'h2' : 'h1'}>${s.title}</${i ? 'h2' : 'h1'}><div class="slide-content">${s.body}</div><div class="slide-sources">${s.refs.map(([title,url]) => `<a href="${url}" target="_blank" rel="noopener">${title} ↗</a>`).join('')}</div><small class="slide-version" aria-label="발표자료 버전">v${release.version}</small></section>`).join('');
 $('#outline-list').innerHTML = slides.map((s,i)=>`<li><button data-slide="${i}">${String(i+1).padStart(2,'0')} &nbsp; ${cleanTitle(s.title)}<small>${s.chapter}</small></button></li>`).join('');
 const sections = [...document.querySelectorAll('.slide')];
 let current = 0;
+let data, scale='log', chartFrame=0, finishChartAnimation=null;
 function fromHash() {const n = Number(location.hash.slice(1)); return Number.isInteger(n) && n >= 1 && n <= slides.length ? n-1 : 0;}
 function go(index, update = true) {
  const previous=current;
  current = Math.max(0, Math.min(slides.length-1, index));
  sections.forEach((el,i)=>{el.hidden=i!==current;});
  if(previous!==current && sections[current].querySelector('.pace-reveal'))setPaceStep(0);
+ if(previous!==current && sections[current].classList.contains('chart-slide'))setChartScale('log',false);
  const s = slides[current];
  $('#counter').textContent = `${String(current+1).padStart(2,'0')} / ${slides.length}`;
  $('#chapter').textContent = s.chapter;
@@ -42,6 +45,7 @@ function setPaceStep(step) {
  reveal.querySelector('.pace-hint').textContent=`${step+1} / 3 · ${step<2?'클릭·→·Space로 다음 표현':'다음: 실제 측정 그래프'}`;
 }
 function advance(delta) {
+ if(delta>0 && sections[current].classList.contains('chart-slide') && scale==='log'){setChartScale('linear');return;}
  const reveal=sections[current].querySelector('.pace-reveal');
  if(reveal){
   const next=Number(reveal.dataset.step)+delta;
@@ -119,7 +123,6 @@ go(fromHash(),false);
 const clockFormat=new Intl.DateTimeFormat('ko-KR',{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
 function tick(){const now=new Date();$('#clock').textContent=clockFormat.format(now);$('#clock').dateTime=now.toISOString();}
 tick();setInterval(tick,1000);
-let data, scale='log', chartFrame=0, finishChartAnimation=null;
 const ns='http://www.w3.org/2000/svg';
 function svgNode(name,attrs,text){const el=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);if(text!==undefined)el.textContent=text;return el;}
 function duration(m){return m<1?`${(m*60).toFixed(1)}초`:m<60?`${m.toFixed(1)}분`:`${(m/60).toFixed(1)}시간`;}
@@ -185,6 +188,20 @@ function drawChart(animate=false){
  ticks.forEach(v=>{const yy=y(Math.max(scale==='log'?min:0,v)),opacity=visibleTicks.includes(v)?1:0;svg.append(svgNode('line',{x1:L,x2:W-R,y1:yy,y2:yy,opacity,'data-motion':`grid-${v}`,stroke:'#d4ddef'}),svgNode('text',{x:L-10,y:yy+4,opacity,'aria-hidden':opacity===0,'data-motion':`tick-${v}`,'text-anchor':'end'},v===0?'0':duration(v).replace('.0','')));});
  for(let yr=2019;yr<=2026;yr++){const xx=x(`${yr}-01-01`);svg.append(svgNode('text',{x:xx,y:H-9,'text-anchor':'middle'},yr));}
  svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,'data-motion':'threshold',stroke:'#b36817','stroke-dasharray':'5 5'}));
+ const trend=fitExponentialTrend(data.models);
+ if(trend){
+  const group=svgNode('g',{class:'metr-trend',role:'img','aria-label':'2023년 이후 지수 추세선. 16시간 이하 추정치의 로그값을 회귀한 설명용 곡선.'});
+  group.append(svgNode('title',{},`${trend.count}개 모델 · 설명용 지수 회귀 · 배가 시간 약 ${Math.round(trend.doublingDays)}일`));
+  // Fixed sample dates keep every segment aligned during scale transitions.
+  const samples=Array.from({length:97},(_,i)=>{
+   const time=trend.start+(trend.end-trend.start)*i/96;
+   return {x:x(new Date(time).toISOString()),y:y(Math.min(max,Math.max(min,trend.valueAt(time))))};
+  });
+  for(let i=1;i<samples.length;i++)group.append(svgNode('line',{x1:samples[i-1].x,y1:samples[i-1].y,x2:samples[i].x,y2:samples[i].y,'data-motion':`trend-${i}`}));
+  svg.append(group);
+  svg.append(svgNode('line',{x1:L+30,x2:L+60,y1:T+31,y2:T+31,class:'trend-key'}));
+  svg.append(svgNode('text',{x:L+68,y:T+35,class:'trend-caption'},'지수 추세 · 2023년 이후'));
+ }
  const earlyLabels=new Set(['gpt2','davinci_002','gpt_4']);
  const recentLabels=new Set(['gpt_5_2025_08_07_inspect','gemini_3_1_pro','gpt_5_4','claude_opus_4_6_inspect','claude_mythos_preview_early_inspect']);
  data.models.forEach(m=>{
@@ -216,7 +233,13 @@ function drawChart(animate=false){
  });
  transitionChart(svg,animate);
 }
-document.querySelectorAll('[data-scale]').forEach(b=>b.onclick=()=>{if(scale===b.dataset.scale)return;scale=b.dataset.scale;document.querySelectorAll('[data-scale]').forEach(el=>el.setAttribute('aria-pressed',el===b));if(data)drawChart(true);});
+function setChartScale(next, animate=true) {
+ if(scale===next)return;
+ scale=next;
+ document.querySelectorAll('[data-scale]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.scale===scale)));
+ if(data)drawChart(animate);
+}
+document.querySelectorAll('[data-scale]').forEach(b=>b.onclick=()=>setChartScale(b.dataset.scale));
 try {const response=await fetch('./data/metr.json');if(!response.ok)throw new Error('data');data=await response.json();drawChart();}catch{$('#metr-chart').innerHTML='<p>그래프 데이터를 불러오지 못했습니다. <a href="https://metr.org/time-horizons/">METR 공식 그래프 보기</a></p>';}
 // Contribution graph: pad the first week so each column runs Sunday to Saturday.
 try{
