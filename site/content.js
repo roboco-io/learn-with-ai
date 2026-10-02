@@ -18,20 +18,11 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "카페에서 노트북 하나로,<br>빅테크와 겨루는 시대",
-    "body": "<p class=\"lead\">오늘은 취업 준비를 넘어,<br><strong>리스크 없는 창업</strong>을 먼저 해 보자는 이야기입니다.</p>",
-    "chapter": "시작",
-    "kind": "statement",
-    "notes": "예전에는 취업을 위한 학습법을 주로 소개했습니다. 이제는 시대가 빠르게 바뀌어, 카페에서 친구 몇 명 또는 혼자서도 글로벌 테크 기업과 같은 시장에서 경쟁할 수 있습니다. 오늘은 그 기회를 잃을 것 없는 방식으로 먼저 시험해 보자는 이야기를 합니다. ‘리스크 없는’은 돈과 시간을 크게 걸지 않는 방식으로 시작하자는 뜻이며, 창업의 모든 위험이 사라진다는 뜻은 아닙니다. 이 단서는 창업 파트에서 다시 설명합니다.",
-    "refs": [],
-    "minutes": 1
-  },
-  {
     "title": "오늘의 이야기",
-    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 공개 · 장비와 도구 / 17분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
+    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 커뮤니티 · 장비와 도구 / 14분</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분</span></li></ol>",
     "chapter": "시작",
     "kind": "",
-    "notes": "총 60분: 도입 4분, 본문 51분, 질문 5분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 프로젝트의 의도를 정하고 매일 계획·구현·확인하는 흐름, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
+    "notes": "총 60분: 도입 4분, 본문 47분, 질문 9분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 오픈소스 참여로 배우는 방법, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
     "refs": [],
     "minutes": 1
   },
@@ -90,7 +81,7 @@ export const slides = [
     "body": "<p class=\"lead\">배우는 방법을 점검하고 고치는 일이<br>가장 효과가 큰 투자입니다.</p><ol class=\"steps\"><li><strong>토대부터 파악</strong><span>이 분야의 기초 지식이 무엇인지 빠르게 찾기</span></li><li><strong>나만의 커리큘럼</strong><span>전문가까지의 경로 · ‘전문가 초보자’ 경계</span></li><li><strong>몰입 후 꾸준히</strong><span>처음 15-20시간은 몰아치고, 이후 규칙적인 속도로</span></li></ol><p class=\"edge\"><strong>↻ 점검</strong>내 학습 효율을 솔직하게 평가하고, 방법을 고치기</p>",
     "chapter": "여러분이 맞이할 현실",
     "kind": "",
-    "notes": "학습의 전문가가 된다는 것은 배우는 방법 자체를 배운다는 뜻입니다. Kevin Li는 ‘Learning to Learn’에서 대부분의 사람이 오랫동안 자기 학습 방식을 점검하지 않기 때문에, 학습법을 개선하는 일이 적은 노력으로 큰 효과를 낸다고 말합니다. 원문 표현은 ‘Learning to learn is extremely high leverage’입니다. 글은 저자가 300건 넘는 면접에서 들은 가장 좋은 답변을 소개합니다. 그 지원자는 새로운 것을 시작할 때 가장 중요한 것은 무엇을 배울지 아는 것이라고 답했습니다. 첫째, 이 분야의 토대가 되는 지식이 무엇인지 빠르게 찾습니다. 둘째, 전문가 수준에 이르는 나만의 커리큘럼을 짜고 ‘전문가 초보자(expert beginner)’를 경계합니다. 전문가 초보자는 빠르게 실력이 는 뒤 스스로 전문가라고 착각해 배우기를 멈춘 상태입니다. AI 덕분에 결과물을 금방 만들 수 있는 지금 특히 빠지기 쉬운 함정입니다. 셋째, 처음 15-20시간은 강하게 몰아쳐 기억을 새기고, 이후에는 규칙적인 속도로 이어 갑니다. 이 수치는 그 지원자의 방법이며 연구로 검증된 기준은 아닙니다. 마지막으로 저자는 자기 학습 효율을 솔직하게 평가하라고 권합니다. 효율 25%로 40시간 공부하는 것은 효율 80%로 12.5시간 공부하는 것과 같습니다. 이 네 가지는 뒤에 나오는 로드맵(커리큘럼), 7일 몰입과 매일 잔디(속도), AI를 닫고 설명하기(효율 점검) 슬라이드에서 다시 이어집니다.",
+    "notes": "학습의 전문가가 된다는 것은 배우는 방법 자체를 배운다는 뜻입니다. Kevin Li는 ‘Learning to Learn’에서 대부분의 사람이 오랫동안 자기 학습 방식을 점검하지 않기 때문에, 학습법을 개선하는 일이 적은 노력으로 큰 효과를 낸다고 말합니다. 원문 표현은 ‘Learning to learn is extremely high leverage’입니다. 글은 저자가 300건 넘는 면접에서 들은 가장 좋은 답변을 소개합니다. 그 지원자는 새로운 것을 시작할 때 가장 중요한 것은 무엇을 배울지 아는 것이라고 답했습니다. 첫째, 이 분야의 토대가 되는 지식이 무엇인지 빠르게 찾습니다. 둘째, 전문가 수준에 이르는 나만의 커리큘럼을 짜고 ‘전문가 초보자(expert beginner)’를 경계합니다. 전문가 초보자는 빠르게 실력이 는 뒤 스스로 전문가라고 착각해 배우기를 멈춘 상태입니다. AI 덕분에 결과물을 금방 만들 수 있는 지금 특히 빠지기 쉬운 함정입니다. 셋째, 처음 15-20시간은 강하게 몰아쳐 기억을 새기고, 이후에는 규칙적인 속도로 이어 갑니다. 이 수치는 그 지원자의 방법이며 연구로 검증된 기준은 아닙니다. 마지막으로 저자는 자기 학습 효율을 솔직하게 평가하라고 권합니다. 효율 25%로 40시간 공부하는 것은 효율 80%로 12.5시간 공부하는 것과 같습니다. 이 네 가지는 뒤에 나오는 로드맵(커리큘럼), 매일 잔디(속도), AI를 닫고 설명하기(효율 점검) 슬라이드에서 다시 이어집니다.",
     "refs": [
       [
         "Kevin Li · Learning to Learn",
@@ -218,15 +209,56 @@ export const slides = [
     "minutes": 1
   },
   {
-    "title": "경험은 건너뛸 수 없다",
-    "body": "<blockquote>“There is no compression<br>algorithm for experience.”</blockquote><p>Werner Vogels · Amazon CTO</p><p class=\"lead\">경험을 압축할 수 없다면, 경험을 많이 하자.<br><strong>무조건 질보다 양입니다.</strong></p>",
+    "title": "바이브 코딩을 잘 하는 법<br>질보다 양",
+    "body": "<div class=\"quote-portrait\"><img src=\"./assets/werner-vogels.jpeg\" width=\"235\" height=\"235\" alt=\"헤드폰을 쓰고 노트북 앞에 앉아 있는 베르너 보겔스 박사\"><div><blockquote>“There is no compression<br>algorithm for experience.”</blockquote><p>Werner Vogels · Amazon CTO</p></div></div><p class=\"lead\">롤플레잉 게임처럼, 많이 시도할수록<br>경험치가 실시간으로 쌓이고<br><strong>개발자로서의 레벨은 계단식으로 올라갑니다.</strong></p>",
     "chapter": "만들면서 배우기",
-    "kind": "",
-    "notes": "보겔스의 표현을 학습에 적용해 봅니다. 완벽한 프로젝트 하나를 오래 준비하는 대신 혼자 진행하는 작은 프로젝트를 많이 완주합니다. 여기서 양은 복사한 코드나 커밋 숫자가 아니라 문제를 정하고 만들고 확인하고 배운 횟수입니다.",
+    "kind": "experience-slide",
+    "notes": "보겔스 박사는 “There is no compression algorithm for experience.”, 즉 경험을 압축하는 알고리즘은 없다고 말했습니다. 이 발언을 바이브 코딩 학습에 적용해 봅니다. 롤플레잉 게임에서 퀘스트를 하나씩 수행하며 경험치를 쌓듯, 작은 프로젝트를 만들고 오류를 고치고 결과를 확인하는 시도마다 경험치가 실시간으로 쌓입니다. 당장은 실력의 변화가 눈에 잘 보이지 않더라도, 경험이 쌓이면 이전에 막혔던 문제를 풀거나 더 큰 프로젝트를 완성하는 순간이 찾아옵니다. 개발자로서의 레벨이 계단식으로 올라가는 것입니다. 이 경험치와 레벨 이야기는 강연자의 학습 비유이며, 보겔스의 직접 발언이나 측정된 성장 법칙은 아닙니다. 완벽한 프로젝트 하나를 오래 준비하기보다 작은 시도를 많이 완주하세요. 여기서 양은 생성한 코드나 커밋 숫자가 아니라 문제를 정하고 만들고 확인하고 배운 횟수입니다. 실패한 시도도 왜 실패했는지 이해하고 다음 시도에 반영하면 경험으로 남습니다.",
     "refs": [
       [
         "Werner Vogels · 원문",
         "https://www.linkedin.com/posts/wernervogels_there-is-no-compression-algorithm-for-experience-activity-7322954729037201409-ATA-"
+      ],
+      [
+        "Werner Vogels · 사진",
+        "https://pbs.twimg.com/profile_images/563188960394891264/z3-Rh11q_400x400.jpeg"
+      ]
+    ],
+    "minutes": 1
+  },
+
+  {
+    "title": "바이브 코딩은<br>참여하면서 배우세요",
+    "body": "<p class=\"lead\">AI로 개발하는 오픈소스 프로젝트에<br><strong>작은 기여 하나를 해 보세요.</strong></p><ol class=\"steps\"><li><strong>작업 방식 읽기</strong><span>기여 안내 · 에이전트 지침 · 기존 PR</span></li><li><strong>작게 해결하기</strong><span>문제 재현 → AI와 수정 → 직접 검증</span></li><li><strong>리뷰로 배우기</strong><span>피드백 반영 · 판단의 이유 기록</span></li></ol>",
+    "chapter": "만들면서 배우기",
+    "kind": "",
+    "notes": "강연자가 추천하는 바이브 코딩 학습법은 AI를 활용해 개발하는 오픈소스 프로젝트에 직접 참여하는 것입니다. 최신 기법을 이름으로만 익히는 대신, 실제 프로젝트의 에이전트 지침과 변경 제안(PR), 테스트, 리뷰 과정을 함께 읽고 사용해 볼 수 있습니다. 가장 효과적인 학습법이라는 비교 연구 결과가 아니라 강연자의 권장안입니다. 처음에는 작은 버그를 재현하거나 문서를 개선하는 것으로 시작하세요. 프로젝트의 기여 절차에 맞춰 작업 범위를 합의하고, AI와 함께 수정한 뒤 결과를 직접 확인합니다. 다른 사람이 왜 이 수정을 요청했는지 설명할 수 있게 되면 그 경험이 내 지식으로 남습니다. 다음 장에서 참여 후보 세 곳을 소개합니다.",
+    "refs": [
+      [
+        "Goose · 기여 절차",
+        "https://github.com/aaif-goose/goose/blob/main/CONTRIBUTING.md"
+      ]
+    ],
+    "minutes": 1
+  },
+  {
+    "title": "함께 배울 오픈소스 프로젝트",
+    "body": "<table><thead><tr><th>프로젝트</th><th>AI 개발의 공개 근거</th><th>배워 볼 것</th></tr></thead><tbody><tr><td><a href=\"https://github.com/aaif-goose/goose\">Goose</a></td><td>AI 기여 · AI 코드 리뷰</td><td>설계 → 구현 → 검증</td></tr><tr><td><a href=\"https://github.com/openclaw/openclaw\">OpenClaw</a></td><td>바이브 코딩 PR 환영 명시</td><td>에이전트 지침 · 리뷰 대응</td></tr><tr><td><a href=\"https://github.com/Aider-AI/aider\">Aider</a></td><td>릴리스별 AI 작성 비율 공개</td><td>코드 편집 · 모델 평가</td></tr></tbody></table><p class=\"edge\"><strong>첫걸음</strong>기여 안내를 읽고, 작은 문제 하나부터</p>",
+    "chapter": "만들면서 배우기",
+    "kind": "",
+    "notes": "2026-10-02 확인한 공식 저장소와 기여 문서 기준입니다. Goose는 개발 에이전트 프로젝트이며 AI 활용 기여를 인정하고 AI 코드 리뷰를 운영합니다. 이슈의 설계 토론에 참여할 수 있고, 구현과 PR은 이슈가 Ready 상태가 된 뒤에 시작해야 합니다. OpenClaw는 개인 AI 비서 프로젝트로 기여 문서에 AI/Vibe-Coded PRs Welcome을 명시합니다. 작은 문서·버그 이슈나 good first issue부터 시작하고, 코드 이해와 검증 증거를 준비하며 리뷰 의견에 대응합니다. Aider는 터미널 AI 페어 프로그래밍 도구입니다. 릴리스 이력에 Aider가 자체 코드 작성에 기여한 비율을 공개하며, 이는 해당 릴리스의 수치이지 전체 코드베이스의 AI 작성 비율을 뜻하지 않습니다. 모델 벤치마크 결과 기여도 가능합니다: https://aider.chat/docs/leaderboards/contrib.html . 표의 학습 항목은 공개된 개발 방식에 근거한 강연자의 추천입니다. 모든 코드가 AI로 작성되었다는 뜻은 아니며, 참여 전에 최신 기여 규칙과 이슈 상태를 확인하세요.",
+    "refs": [
+      [
+        "Goose · 기여 안내",
+        "https://github.com/aaif-goose/goose/blob/main/CONTRIBUTING.md"
+      ],
+      [
+        "OpenClaw · 기여 안내",
+        "https://github.com/openclaw/openclaw/blob/main/CONTRIBUTING.md"
+      ],
+      [
+        "Aider · 개발 이력",
+        "https://github.com/Aider-AI/aider/blob/main/HISTORY.md"
       ]
     ],
     "minutes": 1
@@ -246,24 +278,6 @@ export const slides = [
     "minutes": 2
   },
   {
-    "title": "프로젝트의 의도를 먼저 쓰기",
-    "body": "<div class=\"intent-grid\"><div><h3>왜 만드는가</h3><p>이 프로젝트로 무엇을 배울 수 있을까?<br>누가 겪는 어떤 불편인가?</p></div><div><h3>오늘 무엇을 만드는가</h3><p>오늘은 어디까지 만들까?<br>어떻게 확인할까?</p></div><div><h3>이번에 하지 않을 것</h3><p>결제 · 복잡한 로그인 등<br>실험을 늦추는 범위</p></div></div><p class=\"lead\">이 세 문장을 AI 에이전트에게도 그대로 전달하세요.</p>",
-    "chapter": "만들면서 배우기",
-    "kind": "exercise-slide",
-    "notes": "앞의 XY 문제처럼, 에이전트에게 기능 목록만 주면 내가 원래 원한 결과와 다른 답을 받기 쉽습니다. 프로젝트를 시작할 때 왜 이것을 해야 하는지, 이 프로젝트로 무엇을 배울 수 있는지 적고 AI에게도 전달합니다. 학습이 목적이라면 설명과 질문을 요청하고, 채용공고 맞춤 프로젝트라면 공고의 역량과 검증 방법을 명시합니다. 무엇을 만들지는 내가 잘 아는 것이나 알고 싶은 것에서 고르고, 장대한 목표보다 빠르게 프로토타입을 완성해 공개합니다. 실행은 일 단위입니다. 매일 작업을 시작하기 전에 오늘 어디까지 만들지와 확인 방법을 정합니다. 예를 들어 오늘은 출석 입력과 저장까지만 만들고, 정상 입력과 중복 입력을 직접 확인합니다. 하지 않을 것을 적어 두면 범위가 커지는 것을 막을 수 있습니다.",
-    "refs": [],
-    "minutes": 3
-  },
-  {
-    "title": "7일 프로젝트 · 매일 짧은 피드백 루프",
-    "body": "<p>처음 7일은 몰입 구간입니다. 매일 같은 과정을 반복하세요.</p><div class=\"daily-sprint\"><div><h3>요건 정의</h3><p>피드백으로<br>오늘 범위 정하기</p></div><div><h3>개선</h3><p>코딩 에이전트로<br>구현하고 확인</p></div><div><h3>공개</h3><p>클라우드에 배포해<br>바로 써 보게 하기</p></div><div><h3>피드백</h3><p>커뮤니티의 반응과<br>사용 경험 듣기</p></div></div><p class=\"loop-return\">↶ 피드백을 다음 요건에 반영하고, 다시 반복</p><p class=\"lead\">짧은 피드백 루프로 동기부여를 이어가고,<br>더 빠르게 개선하세요.</p>",
-    "chapter": "만들면서 배우기",
-    "kind": "",
-    "notes": "7일은 프로젝트를 해 보는 기간의 예시이고, 실행 단위는 하루입니다. 첫날 요건 정의, 며칠 뒤 구현, 마지막 날 공개처럼 단계를 날짜별로 나누지 않습니다. 매일 요건 정의·개선·공개·피드백을 한 바퀴 돌립니다. 첫날에는 내가 잘 아는 문제나 배우고 싶은 것에서 오늘의 작은 범위를 정하고, 이후에는 받은 피드백을 바탕으로 범위를 갱신합니다. 코딩 에이전트와 함께 구현하고 직접 결과를 확인한 뒤, 클라우드에 배포하여 커뮤니티 사람들이 써 보고 반응을 줄 수 있게 합니다. 그 반응은 다음 날의 요건과 개선으로 연결합니다. 작은 성과를 자주 확인하고 사람들의 반응을 빠르게 받으면 다음 작업을 이어 갈 동기를 얻을 수 있습니다. 이런 짧은 피드백 루프를 유지하여 동기부여에 기반한 개선 속도 향상을 꾀하는 것이 핵심입니다. 하루 안에 공개와 피드백까지 갈 수 있도록 범위를 작게 잡고, 반응이 늦으면 직접 사용해 본 결과와 이미 받은 의견으로 다음 개선을 진행합니다. 이 7일은 ‘배우는 법을 배우기’에서 본 초반 15-20시간의 몰입 구간에 해당합니다. 7일 동안 하루 2-3시간이면 비슷한 분량입니다.",
-    "refs": [],
-    "minutes": 2
-  },
-  {
     "title": "게임하듯 매일, 잔디 심기",
     "body": "<div class=\"streak-stats\"><div><b>4,005</b><span>최근 1년 기여</span></div><div><b>277일</b><span>기여한 날</span></div><div><b>24일</b><span>최장 연속 기여</span></div></div><div id=\"contrib\" class=\"contrib\" role=\"img\" aria-label=\"강연자의 최근 1년 GitHub 기여 그래프\"></div><p class=\"fine\">강연자의 GitHub 기여 그래프 · 2025-09-28–2026-09-27 · 진할수록 그날 기여가 많음</p><p class=\"lead\">초반 몰입 뒤에는 규칙적인 속도로.<br>방해받지 않는 시간을 고정하고, 하루도 빼먹지 마세요.</p>",
     "chapter": "만들면서 배우기",
@@ -279,18 +293,50 @@ export const slides = [
   },
   {
     "title": "AI를 닫고, 내가 설명하기",
-    "body": "<p class=\"lead\">AI로 빠르게 배운 것은 빠르게 잊힙니다.</p><ol class=\"steps\"><li><strong>기억에서 꺼내기</strong><span>어떤 문제였고, 어떻게 해결했나</span></li><li><strong>빈틈 확인하기</strong><span>설명 못 한 개념을 다시 공부</span></li><li><strong>발표하기</strong><span>개발자 커뮤니티 · 스터디에서 발표</span></li></ol><p class=\"edge\"><strong>효율 점검</strong>설명하지 못했다면, 공부한 시간이 아니라 방법을 돌아보세요</p>",
+    "body": "<p class=\"lead\">남에게 설명하고 질문에 답해 보면,<br>진짜 아는 것과 모르는 것이 드러납니다.</p><ol class=\"steps\"><li><strong>내 말로 설명하기</strong><span>어떤 문제였고, 왜 그렇게 해결했나</span></li><li><strong>질문에 답하기</strong><span>답이 막히는 지점이 이해의 빈틈</span></li><li><strong>다시 배우고 나누기</strong><span>스터디 · 개발자 커뮤니티에서 발표</span></li></ol><p class=\"edge\"><strong>발표의 가치</strong>모르는 것을 발견하고, 다음에 배울 것을 정하기</p>",
     "chapter": "만들면서 배우기",
     "kind": "",
-    "notes": "AI로 빨리 읽었다고 내 지식이 되는 것은 아닙니다. 먼저 자료 없이 설명하고 실제 자료로 오류를 확인하세요. 인출 연습은 기억을 강화하는 데 도움을 줄 수 있고, 발표는 배운 것을 다시 꺼내 정리하게 만드는 좋은 계기입니다. 발표는 인맥을 넓히는 수단이기도 합니다. 현업자 대부분은 학생을 돕고 싶어 하므로, 학생은 구체적으로 도움을 요청하고 적용 결과를 공유하는 것부터 관계를 만들 수 있습니다. 강연자가 운영하는 바이브 코딩 커뮤니티는 마지막 슬라이드에서 안내합니다. 설명해 보는 것은 내 학습 효율을 솔직하게 점검하는 방법이기도 합니다. 효율 25%로 40시간 공부하는 것은 효율 80%로 12.5시간 공부하는 것과 같습니다.",
+    "notes": "AI로 빨리 읽었다고 내 지식이 되는 것은 아닙니다. 먼저 자료 없이 내 말로 설명하고 실제 자료로 오류를 확인하세요. 발표가 중요한 이유는 남에게 설명하고 질문에 답하는 과정에서 내가 진짜로 아는 것과 모르는 것을 구분할 수 있기 때문입니다. 혼자 읽을 때는 이해했다고 느껴도, 다른 사람에게 해결 과정과 선택의 이유를 설명하려면 개념 사이의 연결을 분명히 해야 합니다. “왜 이 방법을 골랐나요?”, “조건이 바뀌면 어떻게 되나요?” 같은 질문에 답하다 막히는 지점이 다음에 공부할 부분입니다. 모르는 질문은 인정하고 기록한 뒤, 다시 공부하거나 실험하여 다음 모임에서 답을 공유하세요. 스터디나 개발자 커뮤니티에서 작은 프로젝트를 5분 정도 소개하고 질문을 받는 것으로 시작할 수 있습니다. 발표 자료는 AI의 도움으로 정리해도, 설명과 답변은 먼저 내 힘으로 해 보세요. 인출 연습은 기억을 강화하는 데 도움을 줄 수 있고, 발표는 배운 것을 다시 꺼내 정리하고 이해의 빈틈을 확인하는 실천 방법입니다. 이 발표 방식은 강연자의 학습 권장안입니다. 다음 슬라이드에서 참여할 커뮤니티와 기술 소식 정보원을 소개합니다.",
     "refs": [
       [
         "The Learning Scientists · 인출 연습",
         "https://www.learningscientists.org/blog/2016/6/23-1"
       ]
     ],
-    "minutes": 2
+    "minutes": 1
   },
+
+  {
+    "title": "바이브 코딩 커뮤니티를 활용하세요",
+    "body": "<div class=\"columns\"><div><h3>Reddit · 해외 실전 경험</h3><ul class=\"resource-list\"><li><a href=\"https://www.reddit.com/r/vibecoding/\" target=\"_blank\" rel=\"noopener\">r/vibecoding</a><span>만든 프로젝트 · 시행착오 · 피드백</span></li><li><a href=\"https://www.reddit.com/r/ClaudeCode/\" target=\"_blank\" rel=\"noopener\">r/ClaudeCode</a><span>Claude Code 작업 방식 · 질문과 팁</span></li><li><a href=\"https://www.reddit.com/r/cursor/\" target=\"_blank\" rel=\"noopener\">r/cursor</a><span>Cursor 활용 · 문제 해결 · 도구 비교</span></li></ul></div><div><h3>가까이서 묻고, 소식 읽기</h3><ul class=\"resource-list\"><li><a href=\"https://open.kakao.com/o/gy12RTBh\" target=\"_blank\" rel=\"noopener\">바이브 코딩 단톡방</a><span>발표자 정도현 운영 · 질문과 경험 공유<br>입장코드 <strong>vibe</strong></span></li><li><a href=\"https://news.hada.io/\" target=\"_blank\" rel=\"noopener\">GeekNews · 기술 뉴스</a><span>개발 · AI · 스타트업 소식과 원문 탐색<br>커뮤니티 참여와 함께 활용할 정보원</span></li></ul></div></div><p class=\"edge\"><strong>적극 참여하기</strong>막힌 문제를 질문하고, 만든 것과 배운 것을 공유하세요</p>",
+    "chapter": "만들면서 배우기",
+    "kind": "",
+    "notes": "바이브 코딩 개발자 커뮤니티를 적극 활용하세요. 혼자 시행착오를 겪는 데서 그치지 말고 다른 사람의 시도와 질문, 실패 경험도 학습 자료로 삼습니다. Reddit은 실제 최근 게시물과 사람의 댓글을 확인한 세 곳을 소개합니다. r/vibecoding은 프로젝트와 시행착오 공유, r/ClaudeCode는 Claude Code의 작업 방식과 질문·팁, r/cursor는 Cursor 활용과 도구 비교를 살펴보기 좋습니다. Claude Code와 Cursor 커뮤니티는 각 도구 중심의 커뮤니티로, 바이브 코딩 전반을 다루는 r/vibecoding과 성격이 다릅니다. 확인 근거: r/vibecoding의 iOS 설정 버튼 실패 경험 글과 댓글(https://www.reddit.com/r/vibecoding/comments/1wq0w9l/my_apps_open_settings_button_opened_settings_it/), r/ClaudeCode의 Mermaid를 이용한 구현 계획 검토 글과 실제 사용자 답변(https://www.reddit.com/r/ClaudeCode/comments/1whord5/how_i_use_mermaid_diagrams_to_review_claude_codes/), r/cursor의 2026-09-18 코딩 도구 비교 글과 댓글(https://www.reddit.com/r/cursor/comments/1wjo04y/codex_vs_claude_code_vs_cursor_in_september_2026/). 2026-10-02 공개 페이지와 검색 결과를 확인했으며, 일부 페이지는 검색엔진 캐시이므로 표시된 상대 시간을 실시간 활동 수치로 해석하지 않습니다. 활동량 순위나 회원 수를 주장하지 않습니다. 영어가 부담되면 AI로 번역해 읽고 궁금한 부분은 원문을 확인하세요. 발표자 정도현이 운영하는 카카오톡 바이브 코딩 단톡방은 https://open.kakao.com/o/gy12RTBh 이며 입장코드는 소문자 vibe입니다. 질문할 때는 만들려는 것, 이미 시도한 것, 막힌 지점을 함께 적고, 도움받은 내용을 적용한 결과도 공유하세요. GeekNews는 이 슬라이드에서 커뮤니티 참여 대상과 구분하여 개발·기술·스타트업 소식을 접하는 정보원으로 소개합니다. 흥미로운 소식은 원문까지 읽고 내 프로젝트에서 작은 실험으로 이어 가세요. 모든 곳에 가입하기보다 한 곳에서 질문하거나 결과물을 공유하는 행동부터 시작하세요. 단톡방 운영자와 입장코드는 발표자가 제공한 정보입니다.",
+    "refs": [
+      [
+        "r/vibecoding",
+        "https://www.reddit.com/r/vibecoding/"
+      ],
+      [
+        "r/ClaudeCode",
+        "https://www.reddit.com/r/ClaudeCode/"
+      ],
+      [
+        "r/cursor",
+        "https://www.reddit.com/r/cursor/"
+      ],
+      [
+        "단톡방 · 코드 vibe",
+        "https://open.kakao.com/o/gy12RTBh"
+      ],
+      [
+        "GeekNews",
+        "https://news.hada.io/"
+      ]
+    ],
+    "minutes": 1
+  },
+
   {
     "title": "내 이름으로 남기는 기록",
     "body": "<p class=\"lead\">학위보다 내 이름으로 나온 글과 책이 더 값집니다.</p><div class=\"prompt\">내가 풀었던 문제 / 시도한 방법 / 실패와 수정<br>확인한 결과 / 아직 모르는 것 / 재현 방법</div><p>작은 글 → 커뮤니티 발표 → 주제별 연재 → 책<br>첫 초안은 AI 없이 쓰고, 공개해서 피드백을 받으세요. 밑져야 본전입니다.</p>",
@@ -491,7 +537,7 @@ export const slides = [
     "kind": "closing",
     "notes": "질문은 개인의 상황을 함께 들어 주세요. 어떤 역할을 탐색하는지, 현재 만들고 있는 것은 무엇인지, 어디에서 막혔는지를 구체적으로 이야기하면 도움이 됩니다. 커뮤니티에서는 질문의 배경과 시도한 것, 확인하고 싶은 것을 함께 공유하도록 안내합니다.",
     "refs": [],
-    "minutes": 5
+    "minutes": 9
   },
   {
     "title": "참고 자료 · 연구와 학습",

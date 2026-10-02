@@ -137,3 +137,10 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 .chart-mobile-hint{display:none}
 @media(max-width:700px){.chart{height:244px;overflow-x:auto;overflow-y:hidden}.chart svg{width:760px;height:244px;max-width:none}.slide .chart-mobile-hint{display:block;font-size:3cqw;color:var(--muted);margin-top:1cqw}}
 @media print{.chart-mobile-hint{display:none!important}}
+
+.quote-portrait{display:flex;align-items:center;gap:4cqw;margin-bottom:2cqw}
+.quote-portrait img{width:20cqw;height:20cqw;flex-shrink:0;object-fit:contain;border-radius:.6cqw}
+.quote-portrait blockquote{font-size:3.3cqw;margin:0 0 1.4cqw}
+@media(max-width:700px){.quote-portrait{flex-direction:column;align-items:flex-start;gap:5cqw;margin-bottom:4cqw}.quote-portrait img{width:38cqw;height:38cqw}.quote-portrait blockquote{font-size:5.7cqw;margin:0 0 2cqw}}
+
+@media(min-width:701px){.experience-slide .quote-portrait img{width:17cqw;height:17cqw}.experience-slide .quote-portrait{margin-bottom:1cqw}.experience-slide .lead{font-size:2.6cqw}}
