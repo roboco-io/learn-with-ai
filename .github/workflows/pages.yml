@@ -10,8 +10,10 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pages: write
       id-token: write
     environment:
@@ -19,14 +21,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate presentation
+      - name: Validate presentation and release
+        env:
+          PREVIOUS_SHA: ${{ github.event.before }}
         run: |
           node --check site/app.js
           node --check site/content.js
+          node --test scripts/release.test.mjs
           node scripts/check.mjs
+          if [ -n "$PREVIOUS_SHA" ]; then
+            node scripts/release.mjs check --ref HEAD --previous "$PREVIOUS_SHA" --deployment
+          else
+            node scripts/release.mjs check --ref HEAD --deployment
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -34,3 +46,8 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Record successful release
+        run: |
+          RELEASE_TAG=$(node --input-type=module -e 'import { release } from "./site/release.js"; console.log("release-" + release.version);')
+          git tag "$RELEASE_TAG" "$GITHUB_SHA"
+          git push origin "refs/tags/$RELEASE_TAG"

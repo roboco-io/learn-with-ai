@@ -1,0 +1,4 @@
+interface:
+  display_name: "발표자료 배포"
+  short_description: "Prepare versioned release notes and deploy slides"
+  default_prompt: "Use $deploy-presentation to update release notes, increment the date-based version, and deploy this presentation."

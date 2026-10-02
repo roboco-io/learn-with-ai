@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { slides } from '../site/content.js';
+import { checkRelease } from './release.mjs';
+import { fileURLToPath } from 'node:url';
 assert.equal(slides.length, 50);
 assert.equal(slides.reduce((sum, s) => sum + s.minutes, 0), 60);
 for (const s of slides) {
@@ -22,3 +24,6 @@ for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {
 }
 assert(!existsSync(new URL('../site/CNAME', import.meta.url)), 'Inherit organization domain; do not claim apex');
 console.log('Verified: 50 complete slides, 60-minute timing, 26 METR records, local assets and project domain setup.');
+
+const release = checkRelease({ cwd: fileURLToPath(new URL('..', import.meta.url)) });
+console.log(`Verified release notes, version and source snapshot: ${release.version}`);

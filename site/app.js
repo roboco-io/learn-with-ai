@@ -1,7 +1,8 @@
 import { slides } from './content.js';
+import { release } from './release.js';
 const $ = (s) => document.querySelector(s);
 const cleanTitle = (s) => s.replace(/<br\s*\/?\s*>/g, ' ').replace(/<[^>]*>/g, '');
-$('#deck').innerHTML = slides.map((s, i) => `<section class="slide ${s.kind}" id="slide-${i+1}" aria-label="${i+1}. ${cleanTitle(s.title)}" ${i ? 'hidden' : ''}><${i ? 'h2' : 'h1'}>${s.title}</${i ? 'h2' : 'h1'}><div class="slide-content">${s.body}</div><div class="slide-sources">${s.refs.map(([title,url]) => `<a href="${url}" target="_blank" rel="noopener">${title} ↗</a>`).join('')}</div></section>`).join('');
+$('#deck').innerHTML = slides.map((s, i) => `<section class="slide ${s.kind}" id="slide-${i+1}" aria-label="${i+1}. ${cleanTitle(s.title)}" ${i ? 'hidden' : ''}><${i ? 'h2' : 'h1'}>${s.title}</${i ? 'h2' : 'h1'}><div class="slide-content">${s.body}</div><div class="slide-sources">${s.refs.map(([title,url]) => `<a href="${url}" target="_blank" rel="noopener">${title} ↗</a>`).join('')}</div><small class="slide-version" aria-label="발표자료 버전">v${release.version}</small></section>`).join('');
 $('#outline-list').innerHTML = slides.map((s,i)=>`<li><button data-slide="${i}">${String(i+1).padStart(2,'0')} &nbsp; ${cleanTitle(s.title)}<small>${s.chapter}</small></button></li>`).join('');
 const sections = [...document.querySelectorAll('.slide')];
 let current = 0;

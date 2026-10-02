@@ -43,3 +43,16 @@ Follow the history's `type: imperative summary` convention, such as `docs: clari
 ## Content & Deployment Notes
 
 Keep factual claims linked to sources and distinguish examples from measured data. Preserve snapshot provenance when updating datasets. Pushes to `main` deploy only `site/`; do not add `site/CNAME`, because the project inherits the organization's domain.
+
+
+## Release Workflow
+
+For deployment requests, use the repository skill at `.agents/skills/deploy-presentation/SKILL.md`.
+
+- Versions are `YYYYMMDD+N`, using Asia/Seoul. N starts at 1 each day.
+- Run `node scripts/release.mjs prepare --notes-file /absolute/path/to/summary.txt` after completing all edits. The summary file belongs outside the repo and contains Korean `- ` bullets.
+- Commit `RELEASE_NOTES.md` and `site/release.js` together with the release. Do not edit old entries. Re-prepare after any additional source changes.
+- Install the repository Git hook with `node scripts/release.mjs install-hooks`. Never bypass a failed release check.
+- Before pushing, run the three existing Node checks plus `node --test scripts/release.test.mjs`, using Node.js 22. Push to all configured remotes when deployment is requested.
+- CI checks the committed snapshot, deploys only `main`, and tags successful deployments as `release-YYYYMMDD+N`. A successful version cannot be deployed again; prepare a new one even for a manual redeployment.
+- All slides display the version from `site/release.js`, including fullscreen and print output.
