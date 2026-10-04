@@ -21,19 +21,23 @@ for (const m of data.models) {
 }
 // A known ten-day doubling series checks the regression independently of the display.
 const syntheticTrend = fitExponentialTrend([
-  { date: '2023-01-01', estimate: 2 },
-  { date: '2023-01-11', estimate: 4 },
-  { date: '2023-01-21', estimate: 8 },
-  { date: '2022-01-01', estimate: 500 },
-  { date: '2023-02-01', estimate: 1000 },
+  { date: '2024-01-01', estimate: 2 },
+  { date: '2024-01-11', estimate: 4 },
+  { date: '2024-01-21', estimate: 8 },
+  { date: '2023-12-31', estimate: 500 },
+  { date: '2024-02-01', estimate: 1000 },
+  { date: '2999-01-01', estimate: 100 },
 ]);
 assert.equal(syntheticTrend.count, 3);
 assert(Math.abs(syntheticTrend.doublingDays - 10) < 1e-8);
-assert(Math.abs(syntheticTrend.valueAt(Date.parse('2023-01-06')) - Math.sqrt(8)) < 1e-8);
-assert.equal(fitExponentialTrend([{ date: '2023-01-01', estimate: 2 }]), null);
-assert.equal(fitExponentialTrend([{ date: '2023-01-01', estimate: 2 }, { date: '2023-01-01', estimate: 4 }]), null);
+assert(Math.abs(syntheticTrend.valueAt(Date.parse('2024-01-06')) - Math.sqrt(8)) < 1e-8);
+assert.equal(fitExponentialTrend([{ date: '2024-01-01', estimate: 2 }]), null);
+assert.equal(fitExponentialTrend([{ date: '2024-01-01', estimate: 2 }, { date: '2024-01-01', estimate: 4 }]), null);
 const trend = fitExponentialTrend(data.models);
 assert(trend && trend.doublingDays > 0);
+assert.equal(trend.count, 20);
+assert.equal(trend.start, Date.parse('2024-03-04'));
+assert.equal(trend.end, Date.parse('2026-03-05'));
 assert(trend.valueAt(trend.end) > trend.valueAt(trend.start));
 const html=readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
 for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {

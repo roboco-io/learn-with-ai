@@ -190,7 +190,7 @@ function drawChart(animate=false){
  svg.append(svgNode('line',{x1:L,x2:W-R,y1:lineY,y2:lineY,'data-motion':'threshold',stroke:'#b36817','stroke-dasharray':'5 5'}));
  const trend=fitExponentialTrend(data.models);
  if(trend){
-  const group=svgNode('g',{class:'metr-trend',role:'img','aria-label':'2023년 이후 지수 추세선. 16시간 이하 추정치의 로그값을 회귀한 설명용 곡선.'});
+  const group=svgNode('g',{class:'metr-trend',role:'img','aria-label':'2024년 이후 지수 추세선. 16시간 이하 추정치의 로그값을 회귀한 설명용 곡선.'});
   group.append(svgNode('title',{},`${trend.count}개 모델 · 설명용 지수 회귀 · 배가 시간 약 ${Math.round(trend.doublingDays)}일`));
   // Fixed sample dates keep every segment aligned during scale transitions.
   const samples=Array.from({length:97},(_,i)=>{
@@ -200,7 +200,7 @@ function drawChart(animate=false){
   for(let i=1;i<samples.length;i++)group.append(svgNode('line',{x1:samples[i-1].x,y1:samples[i-1].y,x2:samples[i].x,y2:samples[i].y,'data-motion':`trend-${i}`}));
   svg.append(group);
   svg.append(svgNode('line',{x1:L+30,x2:L+60,y1:T+31,y2:T+31,class:'trend-key'}));
-  svg.append(svgNode('text',{x:L+68,y:T+35,class:'trend-caption'},'지수 추세 · 2023년 이후'));
+  svg.append(svgNode('text',{x:L+68,y:T+35,class:'trend-caption'},'지수 추세 · 2024년 이후'));
  }
  const earlyLabels=new Set(['gpt2','davinci_002','gpt_4']);
  const recentLabels=new Set(['gpt_5_2025_08_07_inspect','gemini_3_1_pro','gpt_5_4','claude_opus_4_6_inspect','claude_mythos_preview_early_inspect']);
