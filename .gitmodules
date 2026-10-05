@@ -1,0 +1,3 @@
+[submodule "demos/cau-vibecoding-demo"]
+	path = demos/cau-vibecoding-demo
+	url = https://github.com/roboco-io/cau-vibecoding-demo.git

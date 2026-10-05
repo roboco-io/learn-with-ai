@@ -115,3 +115,22 @@ test('real Git pre-push hook blocks stale releases and permits a prepared push',
   assert.notEqual(f.run('git', ['push', 'origin', 'main']).status, 0);
   assert.match(f.git('ls-remote', 'origin', 'refs/heads/main'), new RegExp(`^${ready}\\s`));
 });
+
+test('hashes submodule commit references without requiring a checkout', t => {
+  const f = fixture(t);
+  const first = f.git('rev-parse', 'HEAD');
+  f.git('update-index', '--add', '--cacheinfo', `160000,${first},demos/example`);
+  const prepared = f.prepare();
+  assert.equal(prepared.status, 0, prepared.stderr);
+  f.git('add', 'RELEASE_NOTES.md', 'site/release.js');
+  f.git('commit', '-m', 'docs: add demo submodule');
+  assert.equal(f.release('check', '--ref', 'HEAD').status, 0);
+  assert.equal(f.release('check').status, 0);
+  const second = f.git('rev-parse', 'HEAD');
+  f.git('update-index', '--cacheinfo', `160000,${second},demos/example`);
+  assert.notEqual(f.release('check').status, 0);
+  assert.equal(f.prepare().status, 0);
+  f.git('add', 'RELEASE_NOTES.md', 'site/release.js');
+  f.git('commit', '-m', 'docs: update demo submodule');
+  assert.equal(f.release('check', '--ref', 'HEAD').status, 0);
+});

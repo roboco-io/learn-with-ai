@@ -76,3 +76,15 @@ git diff --check
 Git `pre-push` 훅은 실제 푸시될 커밋의 버전·노트·소스 일치를 확인합니다. 훅은 파일이나 커밋을 자동 수정하지 않으며, 갱신은 배포 스킬의 준비 단계가 수행합니다. GitHub Actions도 같은 검증을 수행하여 훅을 설치하지 않은 환경의 누락을 차단합니다.
 
 배포 성공 후 `release-20261002+1` 형태의 태그가 해당 커밋에 붙습니다. 릴리즈 노트는 **배포 준비 기록**, 태그와 Actions 성공 상태는 **배포 완료 기록**입니다. 같은 버전의 성공한 배포를 다시 실행할 수 없습니다. 수동 재배포도 새 버전과 사유를 준비해 커밋해야 합니다. 실패 후 재시도는 성공 태그가 없는 버전으로 가능합니다. 첫 적용 시에는 저장소 규칙이 GitHub Actions의 `contents: write` 권한으로 이 태그를 생성할 수 있어야 합니다.
+
+## 중앙대학교 바이브코딩 데모
+
+[roboco-io/cau-vibecoding-demo](https://github.com/roboco-io/cau-vibecoding-demo)는 학생 대상 시연용 공개 저장소이며, `demos/cau-vibecoding-demo`에 서브모듈로 연결되어 있습니다. 에이전트 작업 지침, 가상 학생 프로필, 자료 검색 → 포트폴리오 → 프로젝트 구현 → 포트폴리오 반영 시연 프롬프트를 제공합니다.
+
+```sh
+git submodule update --init --recursive
+cd demos/cau-vibecoding-demo
+node scripts/check.mjs
+```
+
+데모 폴더를 에이전트의 작업 폴더로 열어 `AGENTS.md`를 읽고 시작하세요. 데모 파일은 발표 사이트의 배포 대상인 `site/`에 포함되지 않습니다.

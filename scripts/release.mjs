@@ -48,11 +48,19 @@ function newer(version, previous) {
 }
 function sourceDigest(cwd, ref) {
   const paths = ref ? git(cwd, ['ls-tree', '-r', '--name-only', '-z', ref]) : git(cwd, ['ls-files', '-z', '--cached', '--others', '--exclude-standard']);
+  const entries = git(cwd, ref ? ['ls-tree', '-r', '-z', ref] : ['ls-files', '--stage', '-z']);
+  const submodules = new Map();
+  for (const entry of entries.split('\0').filter(Boolean)) {
+    const separator = entry.indexOf('\t');
+    const fields = entry.slice(0, separator).split(' ');
+    if (fields[0] === '160000') submodules.set(entry.slice(separator + 1), ref ? fields[2] : fields[1]);
+  }
   const digest = createHash('sha256');
   for (const path of [...new Set(paths.split('\0').filter(Boolean))].sort()) {
     if (metadata.has(path)) continue;
     let content;
-    if (ref) content = git(cwd, ['show', `${ref}:${path}`], null);
+    if (submodules.has(path)) content = Buffer.from(`gitlink ${submodules.get(path)}\n`);
+    else if (ref) content = git(cwd, ['show', `${ref}:${path}`], null);
     else {
       let stat;
       try { stat = lstatSync(resolve(cwd, path)); } catch (error) { if (error.code === 'ENOENT') continue; throw error; }
