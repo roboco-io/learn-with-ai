@@ -598,10 +598,10 @@ export const slides = [
   },
   {
     "title": "참고 자료 · 다음에 읽을 것",
-    "body": "<ul class=\"resource-list\"><li><a href=\"https://github.com/serithemage/awesome-student-developer-resources\">학생 개발자 리소스 모음</a><span>학생 혜택과 개발 도구 탐색</span></li><li><a href=\"https://news.hada.io/topic?id=33794\">LLM 시대의 프로그래밍 학습</a><span>Mark Seemann · LLM이 개발 속도를 높여도 기초 이해가 부족해질 위험을 경고하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=5046\">새로운 학습 방법: 학습은 기술이다</a><span>Sahil Bloom · 커뮤니티 참여와 실전으로 학습 속도를 높이는 전략을 설명하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=17382\">학습하는 방법 배우기</a><span>Kevin Li · 효율적으로 배우는 방법을 익히는 것이 모든 지식 습득의 핵심이라는 글</span></li></ul><p class=\"deck-url\">발표자료 · <a href=\"https://roboco.io/learn-with-ai/\">roboco.io/learn-with-ai/</a></p>",
+    "body": "<ul class=\"resource-list\"><li><a href=\"https://roboco.io/\">로보코 블로그 · roboco.io</a><span>AI 개발 실무와 바이브 코딩 경험 · <a href=\"https://roboco.io/posts/the-art-of-vibe-coding/\">바이브 코딩의 기술</a> · <a href=\"https://roboco.io/posts/vibe-coding-and-xyproblem/\">XY 문제</a> · <a href=\"https://roboco.io/posts/cognitive-debt/\">인지부채</a></span></li><li><a href=\"https://github.com/serithemage/awesome-student-developer-resources\">학생 개발자 리소스 모음</a><span>학생 혜택과 개발 도구 탐색</span></li><li><a href=\"https://news.hada.io/topic?id=33794\">LLM 시대의 프로그래밍 학습</a><span>Mark Seemann · LLM이 개발 속도를 높여도 기초 이해가 부족해질 위험을 경고하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=5046\">새로운 학습 방법: 학습은 기술이다</a><span>Sahil Bloom · 커뮤니티 참여와 실전으로 학습 속도를 높이는 전략을 설명하는 글</span></li><li><a href=\"https://news.hada.io/topic?id=17382\">학습하는 방법 배우기</a><span>Kevin Li · 효율적으로 배우는 방법을 익히는 것이 모든 지식 습득의 핵심이라는 글</span></li></ul><p class=\"deck-url\">발표자료 · <a href=\"https://roboco.io/learn-with-ai/\">roboco.io/learn-with-ai/</a></p>",
     "chapter": "부록",
     "kind": "references",
-    "notes": "도구별 요금과 학생 혜택은 변경될 수 있으므로 신청 전에 공식 링크에서 다시 확인합니다. 이 링크들은 강연 이후 읽을 자료이며, 취업이나 창업 성공을 보장하는 근거가 아닙니다.",
+    "notes": "로보코 블로그(roboco.io)의 Posts에서 AI 개발 실무와 바이브 코딩 관련 글을 읽을 수 있습니다. 발표자 정도현이 작성한 「바이브 코딩의 기술」은 AI의 결과를 구조화하고 검증하는 접근을, 「바이브 코딩과 XY 문제」는 해결책을 지시하기 전에 목적과 의도를 명확히 전달하는 방법을 소개합니다. 「인지부채」는 AI가 만든 코드와 나의 이해 사이의 격차를 다루며, 직접 설명하고 질문하며 이해를 점검하는 실천으로 연결해 읽기를 권합니다. 블로그 글은 저자의 경험과 해석을 담은 자료이므로 연결된 원문과 연구의 한계도 함께 확인합니다. 도구별 요금과 학생 혜택은 변경될 수 있으므로 신청 전에 공식 링크에서 다시 확인합니다. 이 링크들은 강연 이후 읽을 자료이며, 취업이나 창업 성공을 보장하는 근거가 아닙니다.",
     "refs": [],
     "minutes": 0
   }
