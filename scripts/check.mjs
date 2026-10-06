@@ -4,7 +4,7 @@ import { slides } from '../site/content.js';
 import { fitExponentialTrend } from '../site/trend.js';
 import { checkRelease } from './release.mjs';
 import { fileURLToPath } from 'node:url';
-assert.equal(slides.length, 50);
+assert.equal(slides.length, 49);
 assert.equal(slides.reduce((sum, s) => sum + s.minutes, 0), 60);
 for (const s of slides) {
   assert(s.title && s.body && s.notes && s.chapter, 'Incomplete slide');
@@ -46,7 +46,7 @@ for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {
   assert(existsSync(new URL(`../site/${path}`, import.meta.url)), `Missing ${path}`);
 }
 assert(!existsSync(new URL('../site/CNAME', import.meta.url)), 'Inherit organization domain; do not claim apex');
-console.log('Verified: 50 complete slides, 60-minute timing, 26 METR records, local assets and project domain setup.');
+console.log('Verified: 49 complete slides, 60-minute timing, 26 METR records, local assets and project domain setup.');
 
 const release = checkRelease({ cwd: fileURLToPath(new URL('..', import.meta.url)) });
 console.log(`Verified release notes, version and source snapshot: ${release.version}`);

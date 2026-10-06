@@ -174,3 +174,5 @@ table{font-size:2.1cqw}th{font-size:1.7cqw}
 
 .metr-trend,.trend-key{stroke:#b52e70;stroke-width:3;stroke-linecap:round;fill:none;pointer-events:none}
 .chart .trend-caption{fill:#a12461;font-size:13px;font-weight:700}
+
+.chart .model-date{fill:var(--muted);font-size:12px}

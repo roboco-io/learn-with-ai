@@ -223,13 +223,14 @@ function drawChart(animate=false){
   svg.append(svgNode('text',{x:x(m.date),y:y(m.estimate)-14,'text-anchor':'middle',class:'model-label','data-motion':`label-${m.id}`},name));
  });
  const labels=data.models.filter(m=>recentLabels.has(m.id)).map(m=>({m,yy:y(m.estimate)})).sort((a,b)=>a.yy-b.yy);
- labels.forEach((label,i)=>{label.ly=Math.max(T+9,label.yy,i?labels[i-1].ly+25:0);});
+ labels.forEach((label,i)=>{label.ly=Math.max(T+9,label.yy,i?labels[i-1].ly+(labels[i-1].m.id==='claude_mythos_preview_early_inspect'?43:25):0);});
  for(let i=labels.length-1;i>=0;i--)labels[i].ly=Math.min(labels[i].ly,H-B-9-(labels.length-1-i)*25);
  labels.forEach(({m,yy,ly})=>{
   const labelX=W-R+24;
   svg.append(svgNode('line',{x1:x(m.date)+8,y1:yy,x2:labelX-7,y2:ly,class:'model-leader','data-motion':`leader-${m.id}`}));
   const name=m.id==='claude_mythos_preview_early_inspect'?'Claude Mythos Preview*':m.name;
   svg.append(svgNode('text',{x:labelX,y:ly+4,class:`model-label${m.estimate>960?' unreliable-label':''}`,'data-motion':`label-${m.id}`},name));
+  if(m.id==='claude_mythos_preview_early_inspect')svg.append(svgNode('text',{x:labelX,y:ly+23,class:'model-date','data-motion':`date-${m.id}`},`출시일 ${m.date}`));
  });
  transitionChart(svg,animate);
 }
