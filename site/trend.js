@@ -11,5 +11,6 @@ export function fitExponentialTrend(models) {
  const variance=points.reduce((sum,p)=>sum+(p.x-meanX)**2,0);
  if(!variance)return null;
  const slope=points.reduce((sum,p)=>sum+(p.x-meanX)*(p.y-meanY),0)/variance;
- return {start,end,count:samples.length,doublingDays:slope>0?Math.LN2/slope:null,valueAt:time=>Math.exp(meanY+slope*((time-start)/day-meanX))};
+ const displayEnd=Math.max(end,...models.map(m=>Date.parse(m.date)).filter(t=>Number.isFinite(t) && t>=since && t<=until));
+ return {start,end,displayEnd,count:samples.length,doublingDays:slope>0?Math.LN2/slope:null,valueAt:time=>Math.exp(meanY+slope*((time-start)/day-meanX))};
 }

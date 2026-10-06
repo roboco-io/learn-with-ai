@@ -38,6 +38,8 @@ assert(trend && trend.doublingDays > 0);
 assert.equal(trend.count, 20);
 assert.equal(trend.start, Date.parse('2024-03-04'));
 assert.equal(trend.end, Date.parse('2026-03-05'));
+assert.equal(trend.displayEnd, Date.parse('2026-04-07'));
+assert(trend.valueAt(trend.displayEnd) > trend.valueAt(trend.end));
 assert(trend.valueAt(trend.end) > trend.valueAt(trend.start));
 const html=readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
 for(const [, path] of html.matchAll(/(?:src|href)="\.\/([^"#]+)"/g)) {

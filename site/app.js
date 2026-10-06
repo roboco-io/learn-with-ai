@@ -194,7 +194,7 @@ function drawChart(animate=false){
   group.append(svgNode('title',{},`${trend.count}개 모델 · 설명용 지수 회귀 · 배가 시간 약 ${Math.round(trend.doublingDays)}일`));
   // Fixed sample dates keep every segment aligned during scale transitions.
   const samples=Array.from({length:97},(_,i)=>{
-   const time=trend.start+(trend.end-trend.start)*i/96;
+   const time=trend.start+(trend.displayEnd-trend.start)*i/96;
    return {x:x(new Date(time).toISOString()),y:y(Math.min(max,Math.max(min,trend.valueAt(time))))};
   });
   for(let i=1;i<samples.length;i++)group.append(svgNode('line',{x1:samples[i-1].x,y1:samples[i-1].y,x2:samples[i].x,y2:samples[i].y,'data-motion':`trend-${i}`}));
