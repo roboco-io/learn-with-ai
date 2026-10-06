@@ -1,8 +1,8 @@
 export const release = {
-  "version": "20261006+1",
+  "version": "20261006+2",
   "timeZone": "Asia/Seoul",
-  "preparedAt": "2026-10-05T23:24:41.077Z",
-  "sourceCommit": "d6679352e73591a66a15f726435501d3978b9774",
-  "sourceDigest": "7173008429ce5032051e0bf743cf63182b5fa5a13e6b0c830f9b5ecb876fb270",
-  "notesDigest": "cdc0635c7a61f729b8094535c68f204ad4c62188e6f5fa74d4a370cf861875e9"
+  "preparedAt": "2026-10-06T00:03:06.842Z",
+  "sourceCommit": "d916cd7c1da469ee66ddf4877d0a7351bb527222",
+  "sourceDigest": "8d08c67d1b38d9e933cc79af6c43308d9ee75324eb810b5286b37cd0360c3356",
+  "notesDigest": "c96181b608fa7eb106c21d3d704c946f03fd6e72fe3a19f714812004e41a35a8"
 };
