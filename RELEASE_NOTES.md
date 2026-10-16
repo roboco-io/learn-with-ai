@@ -3,6 +3,10 @@
 버전: `YYYYMMDD+연번` · 날짜 기준: Asia/Seoul · 당일 연번은 1부터 시작합니다.
 배포 준비 기록이며, 성공한 배포에는 `release-버전` Git 태그가 생성됩니다.
 
+## 20261016+1
+
+- 모든 페이지에 Google Analytics 4 측정 태그(G-9G1SGM9SZQ)를 추가했습니다.
+
 ## 20261006+5
 
 - 7페이지 Claude Mythos Preview 모델 이름 아래에 출시일을 표시했습니다.
