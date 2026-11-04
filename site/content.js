@@ -20,10 +20,10 @@ export const slides = [
 
   {
     "title": "오늘의 이야기",
-    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 11분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 커뮤니티 · 장비와 도구 / 15분 30초</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분 30초</span></li></ol>",
+    "body": "<ol class=\"steps\"><li><strong>여러분이 맞이할 현실</strong><span>AI가 바꾸는 일 · 배우는 법을 배우기 / 8분</span></li><li><strong>취업을 거꾸로 설계하기</strong><span>Offer Backward / 12분</span></li><li><strong>만들면서 배우기</strong><span>톱다운 학습 · 커뮤니티 · 장비와 도구 / 15분 30초</span></li><li><strong>창업에 도전하기</strong><span>리스크 없는 창업 실험 / 7분</span></li><li><strong>차별점과 첫 행동</strong><span>나만의 강점 · 오늘 할 일 / 7분 30초</span></li></ol>",
     "chapter": "시작",
     "kind": "",
-    "notes": "총 60분: 도입 5분, 본문 49분, 질문 6분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 오픈소스 참여로 배우는 방법, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
+    "notes": "총 60분: 도입 5분, 본문 50분, 질문 5분. 진행 속도에 따라 사례 설명을 조절하되, 학습의 전문가라는 메시지, 오픈소스 참여로 배우는 방법, 창업 파트와 마지막 행동 약속은 남겨 주세요.",
     "refs": [],
     "minutes": 1
   },
@@ -205,6 +205,20 @@ export const slides = [
     "kind": "",
     "notes": "여행지에서 충동 구매를 할 때처럼 가끔 하는 일은 판단하기 어렵습니다. 지원도 반복할 수 있는 일과로 만들어 보세요. 지원 이후 무엇이 부족했는지 기록하고 프로필을 갱신합니다. 떨어지더라도 공개 가능한 프로젝트와 회고가 남습니다.",
     "refs": [],
+    "minutes": 1
+  },
+  {
+    "title": "예시 · 반도체 기업 취업 준비 키트",
+    "body": "<p class=\"lead\">전산·경영정보 전공자의 반도체 기업 취업을 사례로 만든 공개 키트입니다.</p><ol class=\"steps\"><li><strong>의도 정하기</strong><span>막연한 목표를 Why·What·Not으로 좁히기</span></li><li><strong>정보 모으기</strong><span>채용공고·합격 사례·데이터셋을 AI로 조사</span></li><li><strong>전략 세우기</strong><span>증명할 역량에서 포트폴리오를 설계</span></li><li><strong>실행하기</strong><span>AI와 함께 실제 프로젝트를 빌드</span></li></ol><p class=\"edge\"><strong>정답집이 아닙니다</strong>내 진로에 맞게 같은 틀로 다시 만들어 보세요</p>",
+    "chapter": "취업을 거꾸로 설계하기",
+    "kind": "",
+    "notes": "지금까지 본 Offer Backward를 특정 진로에 적용한 공개 사례를 소개합니다. 강연자가 만든 이 저장소는 전산·경영정보 전공자가 삼성DS, SK하이닉스, NVIDIA 같은 반도체 기업에 취업하는 상황을 사례로, AI를 활용해 의도를 정하고, 정보를 모으고, 전략을 세우고, 실행하는 네 단계를 보여 줍니다. 저장소에는 채용공고와 내 이력의 차이를 찾는 프롬프트, 직무별 포트폴리오 설계 사례, 공개 데이터로 프로젝트를 만드는 가이드, 그리고 이 키트를 AI와 함께 만든 과정을 담은 튜토리얼이 있습니다. 반도체에 관심이 없어도 같은 네 단계를 자기 진로에 옮겨 쓸 수 있습니다. 이 키트는 취업을 보장하지 않습니다. 또한 허위 경험 작성과 적성검사 대리, 자기소개서 대필, 면접 중 실시간 AI 사용 같은 부정행위는 다루지 않습니다. 채용 정보는 해마다 바뀌므로 실제 공고에서 다시 확인하세요.",
+    "refs": [
+      [
+        "GitHub · semiconductor-career-prep",
+        "https://github.com/serithemage/semiconductor-career-prep"
+      ]
+    ],
     "minutes": 1
   },
   {
@@ -595,7 +609,7 @@ export const slides = [
     "kind": "closing",
     "notes": "질문은 개인의 상황을 함께 들어 주세요. 어떤 역할을 탐색하는지, 현재 만들고 있는 것은 무엇인지, 어디에서 막혔는지를 구체적으로 이야기하면 도움이 됩니다. 커뮤니티에서는 질문의 배경과 시도한 것, 확인하고 싶은 것을 함께 공유하도록 안내합니다.",
     "refs": [],
-    "minutes": 6
+    "minutes": 5
   },
   {
     "title": "참고 자료 · 연구와 학습",
