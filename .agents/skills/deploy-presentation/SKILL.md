@@ -23,7 +23,7 @@ Work from this repository's root. Keep the existing `site/`-only Pages deploymen
    git diff --check
    ```
 
-   Use Node.js 22, matching CI. `prepare` generates `RELEASE_NOTES.md` and `site/release.js` together. It chooses `YYYYMMDD+N` using Asia/Seoul; N starts at 1 each day. Repeating preparation before committing replaces the draft at the same version. Once committed, a subsequent preparation allocates the next version, including a redeployment with no source changes. Explain the redeployment in its notes. Do not pass `--date` during normal deployment; it exists for deterministic tests and historical recovery.
+   Use Node.js 26, matching CI. `prepare` generates `RELEASE_NOTES.md` and `site/release.js` together. It chooses `YYYYMMDD+N` using Asia/Seoul; N starts at 1 each day. Repeating preparation before committing replaces the draft at the same version. Once committed, a subsequent preparation allocates the next version, including a redeployment with no source changes. Explain the redeployment in its notes. Do not pass `--date` during normal deployment; it exists for deterministic tests and historical recovery.
 5. Inspect the notes and preview the version in a slide. Run `node scripts/release.mjs install-hooks` when the repository hook is not installed. Existing unrelated hooks must be integrated, never overwritten.
 6. Split substantial changes into logical commits. Include the generated notes and version in the final release commit. Source changes after preparation require another `prepare` and validation. Run `node scripts/release.mjs check --ref HEAD --deployment` on the final commit; the hook validates the actual pushed commit, not the working directory. Do not bypass a failed hook.
 

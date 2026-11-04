@@ -15,7 +15,7 @@ This repository hosts a Korean, 60-minute web presentation about learning with A
 
 ## Build, Test, and Development Commands
 
-Use Node.js 22, matching CI, and Python 3 for local preview. Run commands from the repository root:
+Use Node.js 26, matching CI, and Python 3 for local preview. Run commands from the repository root:
 
 ```sh
 python3 -m http.server 18765 --bind 127.0.0.1 --directory site
@@ -29,6 +29,8 @@ Open `http://127.0.0.1:18765/` for preview; data loading requires HTTP. The Node
 ## Coding Style & Naming Conventions
 
 Match nearby formatting: two-space indentation in HTML and slide objects, compact CSS rules, and one-space indentation in existing application blocks. Use semicolons, camelCase JavaScript identifiers, and kebab-case CSS classes and asset names. Preserve Korean presentation text and accessible labels. No formatter or linter is configured; avoid unrelated reformatting.
+
+When you add or update a library, use its latest LTS release.
 
 ## Testing Guidelines
 
@@ -53,6 +55,6 @@ For deployment requests, use the repository skill at `.agents/skills/deploy-pres
 - Run `node scripts/release.mjs prepare --notes-file /absolute/path/to/summary.txt` after completing all edits. The summary file belongs outside the repo and contains Korean `- ` bullets.
 - Commit `RELEASE_NOTES.md` and `site/release.js` together with the release. Do not edit old entries. Re-prepare after any additional source changes.
 - Install the repository Git hook with `node scripts/release.mjs install-hooks`. Never bypass a failed release check.
-- Before pushing, run the three existing Node checks plus `node --test scripts/release.test.mjs`, using Node.js 22. Push to all configured remotes when deployment is requested.
+- Before pushing, run the three existing Node checks plus `node --test scripts/release.test.mjs`, using Node.js 26. Push to all configured remotes when deployment is requested.
 - CI checks the committed snapshot, deploys only `main`, and tags successful deployments as `release-YYYYMMDD+N`. A successful version cannot be deployed again; prepare a new one even for a manual redeployment.
 - All slides display the version from `site/release.js`, including fullscreen and print output.
